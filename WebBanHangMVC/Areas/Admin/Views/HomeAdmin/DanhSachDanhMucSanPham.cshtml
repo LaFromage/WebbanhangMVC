@@ -1,0 +1,56 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model IEnumerable<WebBanHangMVC.Data.Loai>
+
+@{
+    ViewData["Title"] = "DanhSachDanhMucSanPham";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h1>Danh Sách Danh Mục Sản Phẩm</h1>
+
+<p>
+    <a asp-action="ThemDanhMucSanPham">Create New</a>
+</p>
+<p>@TempData["Message"]</p>
+<table class="table">
+    <thead>
+        <tr class="table-danger">
+            <th>
+                @Html.DisplayNameFor(model => model.TenLoai)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TenLoaiAlias)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MoTa)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Hinh)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TenLoai)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TenLoaiAlias)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MoTa)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Hinh)
+                </td>
+                <td>
+                    <a asp-action="SuaDanhMucSanPham" asp-route-maLoai="@item.MaLoai">Sửa</a>
+                    <a asp-action="XoaDanhMucSanPham" asp-route-maLoai="@item.MaLoai">Xóa</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

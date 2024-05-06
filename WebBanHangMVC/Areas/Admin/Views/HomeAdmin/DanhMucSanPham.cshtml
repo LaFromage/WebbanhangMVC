@@ -1,0 +1,108 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model IEnumerable<WebBanHangMVC.Data.HangHoa>
+
+@{
+    ViewData["Title"] = "DanhMucSanPham";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h1>Danh mục sản phẩm</h1>
+
+<p>
+    <a asp-action="ThemSanPham">Create New</a>
+</p>
+<p>@TempData["Message"]</p>
+<table class="table">
+    <thead>
+        <tr class="table-danger">
+            <th>
+                @Html.DisplayNameFor(model => model.TenHh)
+            </th>
+            @* <th>
+            @Html.DisplayNameFor(model => model.TenAlias)
+            </th> *@
+            <th>
+                @Html.DisplayNameFor(model => model.MoTaDonVi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DonGia)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Hinh)
+            </th>
+            @* <th>
+            @Html.DisplayNameFor(model => model.NgaySx)
+            </th>
+            <th>
+            @Html.DisplayNameFor(model => model.GiamGia)
+            </th>
+            <th>
+            @Html.DisplayNameFor(model => model.SoLanXem)
+            </th> *@
+            <th>
+                @Html.DisplayNameFor(model => model.MoTa)
+            </th>
+            @* <th>
+            @Html.DisplayNameFor(model => model.MaLoaiNavigation)
+            </th>
+            <th>
+            @Html.DisplayNameFor(model => model.MaNccNavigation)
+            </th> *@
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            int i = 0;
+            string @cls = "table-success";
+        }
+        @foreach (var item in Model)
+        {
+            i = i + 1;
+            cls = "table-success";
+            if (i % 2 == 0)
+            {
+                cls = "table-warning";
+            }
+            <tr class="@cls">
+                <td>
+                    @Html.DisplayFor(modelItem => item.TenHh)
+                </td>
+                @* <td>
+            @Html.DisplayFor(modelItem => item.TenAlias)
+            </td> *@
+                <td>
+                    @Html.DisplayFor(modelItem => item.MoTaDonVi)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DonGia)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Hinh)
+                </td>
+                @* <td>
+            @Html.DisplayFor(modelItem => item.NgaySx)
+            </td>
+            <td>
+            @Html.DisplayFor(modelItem => item.GiamGia)
+            </td>
+            <td>
+            @Html.DisplayFor(modelItem => item.SoLanXem)
+            </td> *@
+                <td>
+                    @Html.DisplayFor(modelItem => item.MoTa)
+                </td>
+                @* <td>
+            @Html.DisplayFor(modelItem => item.MaLoaiNavigation.MaLoai)
+            </td>
+            <td>
+            @Html.DisplayFor(modelItem => item.MaNccNavigation.MaNcc)
+            </td> *@
+                <td>
+                    <a asp-action="SuaSanPham" asp-route-maSanPham="@item.MaHh">Sửa</a>
+                    <a asp-action="XoaSanPham" asp-route-maSanPham="@item.MaHh">Xóa</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

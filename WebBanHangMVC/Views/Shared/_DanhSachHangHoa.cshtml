@@ -1,0 +1,44 @@
+﻿@{
+    Layout = "_LayoutCustomer";
+}
+
+<!-- Single Page Header start -->
+@RenderSection("BreadCum", required: false)
+<!-- Single Page Header End -->
+<!-- EShop Start-->
+<div class="container-fluid fruite py-5">
+    <div class="container py-5">
+        <h1 class="mb-4">Shop Thương Mại</h1>
+        <div class="row g-4">
+            <div class="col-lg-12">
+                <div class="row g-4">
+                    <div class="col-xl-3">
+                        <div class="input-group w-100 mx-auto d-flex">
+                            <form asp-action="Search" asp-controller="HangHoa" style="display:flex">
+                                <input type="search" class="form-control p-3" placeholder="Mời nhập từ khóa" aria-describedby="search-icon-1" name="query">
+                                <button class="searchbtn" style="border: 0px solid; border-radius:10px">
+                                    <span id="search-icon-1" class="input-group-text p-3"><i class="fa fa-search"></i></span>
+                                </button>
+                            </form>
+                            <br />
+                        </div>
+                    </div>
+                    <div class="col-6"></div>
+                </div>
+                <div class="row g-4">
+                    <div class="col-lg-3">
+                        <div class="row g-4">
+                            @await Component.InvokeAsync("MenuLoai")
+                        </div>
+                    </div>
+                    <div class="col-lg-9">
+                        <div class="row g-4 justify-content-center">
+                            @RenderBody()
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- EShop End-->
