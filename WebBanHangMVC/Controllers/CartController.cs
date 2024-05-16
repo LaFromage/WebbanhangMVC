@@ -27,14 +27,17 @@ namespace WebBanHangMVC.Controllers
         {
             var gioHang = Cart;
             var item = gioHang.SingleOrDefault(p => p.MaHh == id);
+
             if (item == null)
             {
                 var hangHoa = db.HangHoas.SingleOrDefault(p => p.MaHh == id);
+
                 if (hangHoa == null)
                 {
                     TempData["Message"] = $"Không tìm thấy hàng hóa có mã {id}";
                     return Redirect("/404");
                 }
+
                 item = new CartItem
                 {
                     MaHh = (int)hangHoa.MaHh,
@@ -58,6 +61,7 @@ namespace WebBanHangMVC.Controllers
         {
             var gioHang = Cart;
             var item = gioHang.SingleOrDefault(p => p.MaHh == id);
+
             if (item != null)
             {
                 gioHang.Remove(item);
@@ -82,11 +86,13 @@ namespace WebBanHangMVC.Controllers
         [HttpPost]
         public IActionResult Checkout(CheckOutVM model)
         {
+
             if (ModelState.IsValid)
             {
                 var customerID = HttpContext.User.Claims.SingleOrDefault
                     (p => p.Type == MyConstants.CLAM_CUSTOMER_ID).Value;
                 var khachHang = new KhachHang();
+
                 if (model.GiongKhachHang)
                 {
                     khachHang = db.KhachHangs.SingleOrDefault(kh => kh.MaKh == customerID);
@@ -109,7 +115,6 @@ namespace WebBanHangMVC.Controllers
                 {
                     db.Add(hoadon);
                     db.SaveChanges();
-
                     var chiTietHoaDon = new List<ChiTietHd>();
                     foreach (var item in Cart)
                     {
@@ -125,9 +130,7 @@ namespace WebBanHangMVC.Controllers
                     db.AddRange(chiTietHoaDon);
                     db.SaveChanges();
                     db.Database.CommitTransaction();
-
                     HttpContext.Session.Set<List<CartItem>>(MyConstants.CART_KEY, new List<CartItem>());
-
                     return View("Success");
                 }
                 catch
@@ -147,7 +150,6 @@ namespace WebBanHangMVC.Controllers
             var tongTien = Cart.Sum(p => p.ThanhTien).ToString();
             var donViTienTe = "USD";
             var maDonHangThamChieu = "DH" + DateTime.Now.Ticks.ToString();
-
             try
             {
                 var response = await _paypalClient.CreateOrder(tongTien, donViTienTe, maDonHangThamChieu);
@@ -167,7 +169,6 @@ namespace WebBanHangMVC.Controllers
             try
             {
                 var response = await _paypalClient.CaptureOrder(orderID);
-
                 if (response != null && response.status == "COMPLETED")
                 {
                     var hoaDonPaypal = response;
@@ -195,7 +196,6 @@ namespace WebBanHangMVC.Controllers
                     {
                         db.Add(hoadon);
                         db.SaveChanges();
-
                         var chiTietHoaDon = new List<ChiTietHd>();
                         foreach (var item in Cart)
                         {
@@ -211,9 +211,7 @@ namespace WebBanHangMVC.Controllers
                         db.AddRange(chiTietHoaDon);
                         db.SaveChanges();
                         db.Database.CommitTransaction();
-
                         HttpContext.Session.Set<List<CartItem>>(MyConstants.CART_KEY, new List<CartItem>());
-
                         return RedirectToAction("PaymentSuccess");
                     }
                     catch

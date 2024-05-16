@@ -96,6 +96,7 @@
 @section Scripts {
     <script src="https://www.paypal.com/sdk/js?client-id=@ViewBag.PaypalClientdId"></script>
     <script>
+
         $(document).ready(function () {
             $("#GiongKhachHang").change(function () {
                 if ($(this).prop("checked")) {
@@ -114,18 +115,20 @@
                 color: 'silver',
                 tagline: 'false'
             },
+
             createOrder: (data, actions) => {
                 return fetch("/Cart/create-paypal-order", {
                     method: "post",
                 }).then((response) => {
+
                     if (!response.ok) {
                         return response.json().then(error => { throw error; });
                     }
-
                     return response.json();
                 }).then((order) => order.id)
                     .catch(error => alert(error.message));
             },
+
             onApprove: (data, actions) => {
                 // Tạo form data từ thông tin người dùng
                 const formData = new FormData();
@@ -142,12 +145,10 @@
                     if (!response.ok) {
                         return response.json().then(error => { throw error; });
                     }
-
                     // Đổi địa chỉ tới action thông báo thành công
                     window.location.href = "/Cart/PaymentSuccess";
                 }).catch(error => alert(error.message));
             }
         }).render('#paypal-button-container');
-
     </script>
 }
