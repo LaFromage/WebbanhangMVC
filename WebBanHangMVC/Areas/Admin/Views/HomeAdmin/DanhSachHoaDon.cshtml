@@ -1,5 +1,7 @@
-﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
-@model IEnumerable<WebBanHangMVC.Data.HoaDon>
+﻿@using X.PagedList
+@using X.PagedList.Mvc.Core
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model IPagedList<WebBanHangMVC.Data.HoaDon>
 
 @{
     ViewData["Title"] = "DanhSachHoaDon";
@@ -7,41 +9,54 @@
 }
 
 <h1>Danh Sách Hóa Đơn</h1>
-
+<p>@TempData["Message"]</p>
+<form asp-action="DanhSachHoaDon" method="get" class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+    <div class="input-group">
+        <input type="text" name="searchString" class="form-control bg-light border-0 small" placeholder="Tìm kiếm" value="@ViewData["CurrentFilter"]">
+        <div class="input-group-append">
+            <button class="btn btn-primary" type="submit"><i class="fas fa-search fa-sm"></i></button>
+        </div>
+    </div>
+</form>
 <table class="table">
     <thead>
-        <tr class="table-danger">
+        <tr class="table-warning">
             <th>
-                @Html.DisplayNameFor(model => model.MaHd)
+                <p>Mã</p>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.NgayDat)
+                <p>Account</p>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.NgayCan)
+                <p>Ngày Đặt</p>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.NgayGiao)
+                <p>Họ Tên</p>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.HoTen)
+                <p>Địa Chỉ</p>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.DiaChi)
+                <p>Điện Thoại</p>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.DienThoai)
+                <p>Payment</p>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.CachThanhToan)
+                <p>Shipping</p>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.CachVanChuyen)
+                <p>State</p>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.GhiChu)
+                <p>Ghi Chú</p>
             </th>
-            <th></th>
+            <th>
+                <p>Hành Động</p>
+            </th>
+            <th>
+                <p>Xem</p>
+            </th>
         </tr>
     </thead>
     <tbody>
@@ -52,13 +67,10 @@
                     @Html.DisplayFor(modelItem => item.MaHd)
                 </td>
                 <td>
+                    @Html.DisplayFor(modelItem => item.MaKh)
+                </td>
+                <td>
                     @Html.DisplayFor(modelItem => item.NgayDat)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.NgayCan)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.NgayGiao)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.HoTen)
@@ -76,11 +88,28 @@
                     @Html.DisplayFor(modelItem => item.CachVanChuyen)
                 </td>
                 <td>
+                    @if (ViewBag.TrangThaiMapping.ContainsKey(item.MaTrangThai))
+                    {
+                        @ViewBag.TrangThaiMapping[item.MaTrangThai]
+                    }
+                    else
+                    {
+                        <p>Trạng thái không xác định</p>
+                    }
+                </td>
+                <td>
                     @Html.DisplayFor(modelItem => item.GhiChu)
                 </td>
                 <td>
+                    <a href="@Url.Action("ChonTrangThai", "HomeAdmin", new { maHd = item.MaHd })" class="btn btn-primary">Chuyển trạng thái</a>
+                </td>
+                <td>
+                    <a href="@Url.Action("ChiTietHoaDon", "HomeAdmin", new { maHd = item.MaHd })">Xem</a>
                 </td>
             </tr>
         }
     </tbody>
 </table>
+<div class="pagination d-flex justify-content-center mt-5">
+    @Html.PagedListPager(Model, page => Url.Action("DanhSachHoaDon", new { page, searchString = ViewData["CurrentFilter"] }))
+</div>

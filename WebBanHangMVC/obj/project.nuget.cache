@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "oGj0wfvFHnJnX6zRWhQlKXbhdAYTpdgSSCBZQX9gXNLSJzI6YIEoo7kSIBnPM1L3BVwzqDVPSlNdpLJwWZ10UA==",
+  "dgSpecHash": "frgJg3UM7Sc/hxziV0yLUxxYsJflBsolBDKewZXu9bjuDT5WSyjmpXT7lgo2ybsfICW+swIpKfQmsCoqzM9vYg==",
   "success": true,
   "projectFilePath": "D:\\LapTrinhNam4\\KhoaLuan\\WebBanHangMVC\\WebBanHangMVC\\WebBanHangMVC.csproj",
   "expectedPackageFiles": [
@@ -163,7 +163,9 @@
     "C:\\Users\\Fromage-Laptop\\.nuget\\packages\\system.threading.channels\\7.0.0\\system.threading.channels.7.0.0.nupkg.sha512",
     "C:\\Users\\Fromage-Laptop\\.nuget\\packages\\system.threading.tasks.dataflow\\7.0.0\\system.threading.tasks.dataflow.7.0.0.nupkg.sha512",
     "C:\\Users\\Fromage-Laptop\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
-    "C:\\Users\\Fromage-Laptop\\.nuget\\packages\\system.windows.extensions\\7.0.0\\system.windows.extensions.7.0.0.nupkg.sha512"
+    "C:\\Users\\Fromage-Laptop\\.nuget\\packages\\system.windows.extensions\\7.0.0\\system.windows.extensions.7.0.0.nupkg.sha512",
+    "C:\\Users\\Fromage-Laptop\\.nuget\\packages\\x.pagedlist\\9.1.2\\x.pagedlist.9.1.2.nupkg.sha512",
+    "C:\\Users\\Fromage-Laptop\\.nuget\\packages\\x.pagedlist.mvc.core\\9.1.2\\x.pagedlist.mvc.core.9.1.2.nupkg.sha512"
   ],
   "logs": []
 }

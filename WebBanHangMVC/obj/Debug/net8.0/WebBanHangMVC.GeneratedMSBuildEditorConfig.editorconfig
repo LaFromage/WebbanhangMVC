@@ -30,6 +30,10 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZUFkbWluXENoaVRpZXRIb2FEb24uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/LapTrinhNam4/KhoaLuan/WebBanHangMVC/WebBanHangMVC/Areas/Admin/Views/HomeAdmin/ChonTrangThai.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZUFkbWluXENob25UcmFuZ1RoYWkuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/LapTrinhNam4/KhoaLuan/WebBanHangMVC/WebBanHangMVC/Areas/Admin/Views/HomeAdmin/DanhMucSanPham.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZUFkbWluXERhbmhNdWNTYW5QaGFtLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -126,12 +130,24 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/LapTrinhNam4/KhoaLuan/WebBanHangMVC/WebBanHangMVC/Views/KhachHang/ChinhSuaProfile.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS2hhY2hIYW5nXENoaW5oU3VhUHJvZmlsZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/LapTrinhNam4/KhoaLuan/WebBanHangMVC/WebBanHangMVC/Views/KhachHang/ChiTietHoaDon.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS2hhY2hIYW5nXENoaVRpZXRIb2FEb24uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/LapTrinhNam4/KhoaLuan/WebBanHangMVC/WebBanHangMVC/Views/KhachHang/DangKy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS2hhY2hIYW5nXERhbmdLeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/LapTrinhNam4/KhoaLuan/WebBanHangMVC/WebBanHangMVC/Views/KhachHang/DangNhap.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS2hhY2hIYW5nXERhbmdOaGFwLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/LapTrinhNam4/KhoaLuan/WebBanHangMVC/WebBanHangMVC/Views/KhachHang/DanhSachHoaDon.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS2hhY2hIYW5nXERhbmhTYWNoSG9hRG9uLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/LapTrinhNam4/KhoaLuan/WebBanHangMVC/WebBanHangMVC/Views/KhachHang/Profile.cshtml]

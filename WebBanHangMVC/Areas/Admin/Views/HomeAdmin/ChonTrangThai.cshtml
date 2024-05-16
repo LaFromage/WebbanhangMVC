@@ -1,0 +1,24 @@
+﻿@using Microsoft.AspNetCore.Mvc
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model int
+
+@{
+    ViewData["Title"] = "Chọn Trạng Thái Đơn Hàng";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h1>Chọn Trạng Thái Đơn Hàng</h1>
+
+<form asp-action="ChonTrangThai" method="post">
+    <input type="hidden" name="maHd" value="@Model" />
+    <div class="form-group">
+        <label for="maTrangThaiMoi">Chọn trạng thái mới:</label>
+        <select class="form-control" id="maTrangThaiMoi" name="maTrangThaiMoi">
+            @foreach (var trangThai in ViewBag.DanhSachTrangThai)
+            {
+                <option value="@trangThai.MaTrangThai">@trangThai.TenTrangThai</option>
+            }
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Chuyển Trạng Thái</button>
+</form>

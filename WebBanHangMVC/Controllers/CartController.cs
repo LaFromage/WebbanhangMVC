@@ -3,6 +3,7 @@ using WebBanHangMVC.Data;
 using WebBanHangMVC.ViewModels;
 using WebBanHangMVC.Helpers;
 using Microsoft.AspNetCore.Authorization;
+using System.Net;
 
 namespace WebBanHangMVC.Controllers
 {
@@ -161,13 +162,72 @@ namespace WebBanHangMVC.Controllers
 
         [Authorize]
         [HttpPost("/Cart/capture-paypal-order")]
-        public async Task<IActionResult> CapturePaypalOrder(string orderID, CancellationToken cancellationToken)
+        public async Task<IActionResult> CapturePaypalOrder(string hoTen, string diaChi, string dienThoai, string ghiChu, string orderID, CancellationToken cancellationToken)
         {
             try
             {
                 var response = await _paypalClient.CaptureOrder(orderID);
-                // Lưu đơn hàng vào database
-                return Ok(response);
+
+                if (response != null && response.status == "COMPLETED")
+                {
+                    var hoaDonPaypal = response;
+                    var tongTien = hoaDonPaypal.purchase_units.FirstOrDefault()?.amount?.value ?? "0"; // Tổng tiền
+                    var donViTienTe = hoaDonPaypal.purchase_units.FirstOrDefault()?.amount?.currency_code ?? "USD"; // Đơn vị tiền tệ
+                    var maDonHangThamChieu = hoaDonPaypal.id; // Mã đơn hàng tham chiếu
+
+                    // Tạo đơn hàng mới trong database
+                    var customerID = HttpContext.User.Claims.SingleOrDefault(p => p.Type == MyConstants.CLAM_CUSTOMER_ID)?.Value;
+                    var khachHang = db.KhachHangs.SingleOrDefault(kh => kh.MaKh == customerID);
+                    var hoadon = new HoaDon
+                    {
+                        MaKh = customerID,
+                        HoTen = hoTen ?? khachHang.HoTen,
+                        DiaChi = diaChi ?? khachHang.DiaChi,
+                        DienThoai = dienThoai ?? khachHang.DienThoai,
+                        NgayDat = DateTime.Now,
+                        CachThanhToan = "PayPal",
+                        CachVanChuyen = "GRAB",
+                        MaTrangThai = 0,
+                        GhiChu = ghiChu
+                    };
+                    db.Database.BeginTransaction();
+                    try
+                    {
+                        db.Add(hoadon);
+                        db.SaveChanges();
+
+                        var chiTietHoaDon = new List<ChiTietHd>();
+                        foreach (var item in Cart)
+                        {
+                            chiTietHoaDon.Add(new ChiTietHd
+                            {
+                                MaHd = hoadon.MaHd,
+                                SoLuong = item.SoLuong,
+                                DonGia = item.DonGia,
+                                MaHh = item.MaHh,
+                                GiamGia = 0
+                            });
+                        }
+                        db.AddRange(chiTietHoaDon);
+                        db.SaveChanges();
+                        db.Database.CommitTransaction();
+
+                        HttpContext.Session.Set<List<CartItem>>(MyConstants.CART_KEY, new List<CartItem>());
+
+                        return RedirectToAction("PaymentSuccess");
+                    }
+                    catch
+                    {
+                        db.Database.RollbackTransaction();
+                        TempData["Message"] = "Có lỗi xảy ra khi xử lý đơn hàng.";
+                        return RedirectToAction("Checkout");
+                    }
+                }
+                else
+                {
+                    TempData["Message"] = "Có lỗi xảy ra khi thanh toán qua PayPal.";
+                    return RedirectToAction("Checkout");
+                }
             }
             catch (Exception ex)
             {

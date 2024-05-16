@@ -8,7 +8,7 @@
     <h1 class="text-center text-white display-6">Thanh Toán</h1>
     <ol class="breadcrumb justify-content-center mb-0">
         <li class="breadcrumb-item"><a href="/">Trang chủ</a></li>
-        <li class="breadcrumb-item active text-white">Thanh toán</li>
+        <li class="breadcrumb-item active text-white" style="color:#A0522D">Thanh toán</li>
     </ol>
 </div>
 <!-- Single Page Header End -->
@@ -127,17 +127,27 @@
                     .catch(error => alert(error.message));
             },
             onApprove: (data, actions) => {
-                return fetch(`/Cart/capture-paypal-order?orderId=${data.orderID}`, {
+                // Tạo form data từ thông tin người dùng
+                const formData = new FormData();
+                formData.append('hoTen', $('input[name=HoTen]').val());
+                formData.append('diaChi', $('input[name=DiaChi]').val());
+                formData.append('dienThoai', $('input[name=DienThoai]').val());
+                formData.append('ghiChu', $('textarea[name=GhiChu]').val());
+                formData.append('orderId', data.orderID);
+
+                return fetch(`/Cart/capture-paypal-order`, {
                     method: "post",
+                    body: formData
                 }).then((response) => {
                     if (!response.ok) {
                         return response.json().then(error => { throw error; });
                     }
 
-                    //Đổi địa chỉ tới action thông báo thành công
+                    // Đổi địa chỉ tới action thông báo thành công
                     window.location.href = "/Cart/PaymentSuccess";
                 }).catch(error => alert(error.message));
             }
         }).render('#paypal-button-container');
+
     </script>
 }

@@ -1,5 +1,7 @@
-﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
-@model IEnumerable<WebBanHangMVC.Data.Loai>
+﻿@using X.PagedList
+@using X.PagedList.Mvc.Core
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model IPagedList<WebBanHangMVC.Data.Loai>
 
 @{
     ViewData["Title"] = "DanhSachDanhMucSanPham";
@@ -7,25 +9,33 @@
 }
 
 <h1>Danh Sách Danh Mục Sản Phẩm</h1>
-
+<p>@TempData["Message"]</p>
+<form asp-action="DanhSachDanhMucSanPham" method="get" class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+    <div class="input-group">
+        <input type="text" name="searchString" class="form-control bg-light border-0 small" placeholder="Tìm kiếm" value="@ViewData["CurrentFilter"]">
+        <div class="input-group-append">
+            <button class="btn btn-primary" type="submit"><i class="fas fa-search fa-sm"></i></button>
+        </div>
+    </div>
+</form>
 <p>
     <a asp-action="ThemDanhMucSanPham">Create New</a>
 </p>
-<p>@TempData["Message"]</p>
+
 <table class="table">
     <thead>
         <tr class="table-danger">
             <th>
-                @Html.DisplayNameFor(model => model.TenLoai)
+                Tên Danh Mục
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.TenLoaiAlias)
+                Tên mã danh mục
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.MoTa)
+                Mô Tả danh mục
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Hinh)
+                Hành Động
             </th>
             <th></th>
         </tr>
@@ -44,9 +54,6 @@
                     @Html.DisplayFor(modelItem => item.MoTa)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Hinh)
-                </td>
-                <td>
                     <a asp-action="SuaDanhMucSanPham" asp-route-maLoai="@item.MaLoai">Sửa</a>
                     <a asp-action="XoaDanhMucSanPham" asp-route-maLoai="@item.MaLoai">Xóa</a>
                 </td>
@@ -54,3 +61,6 @@
         }
     </tbody>
 </table>
+<div class="pagination d-flex justify-content-center mt-5">
+    @Html.PagedListPager(Model, page => Url.Action("DanhSachDanhMucSanPham", new { page, searchString = ViewData["CurrentFilter"] }))
+</div>

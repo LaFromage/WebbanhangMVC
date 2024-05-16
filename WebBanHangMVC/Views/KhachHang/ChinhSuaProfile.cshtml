@@ -1,0 +1,71 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model WebBanHangMVC.Data.KhachHang
+
+@{
+    ViewData["Title"] = "Chỉnh sửa thông tin khách hàng";
+}
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<form asp-action="ChinhSuaProfile" method="post" enctype="multipart/form-data">
+    <div class="container-xl px-4 mt-4">
+        <div class="row">
+            <div class="col-xl-4">
+                <!-- Profile picture card-->
+                <div class="card mb-4 mb-xl-0">
+                    <div class="card-header">Ảnh đại diện</div>
+                    <div class="card-body text-center">
+                        <!-- Profile picture image-->
+                        <img class="img-account-profile rounded-circle mb-2" src="~/Hinh/KhachHang/@Model.Hinh" />
+                        <!-- Profile picture upload button-->
+                        <input type="file" class="form-control-file" id="Hinh" name="Hinh" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-8">
+                <!-- Account details card-->
+                <div class="card mb-4">
+                    <div class="card-header">Thông tin tài khoản</div>
+                    <div class="card-body">
+                        <input type="hidden" class="form-control" id="MaKh" name="MaKh" value="@Model.MaKh">
+                        <!-- Form Group (username)-->
+                        <div class="mb-3">
+                            <label class="small mb-1" for="inputUsername">Họ và Tên</label>
+                            <input type="text" class="form-control" id="HoTen" name="HoTen" value="@Model.HoTen" required>
+
+                        </div>
+                        <div class="mb-3">
+                            <!-- Form Group (organization name)-->
+                            <label class="small mb-1" for="inputOrgName">Địa chỉ</label>
+                            <input type="text" class="form-control" id="DiaChi" name="DiaChi" value="@Model.DiaChi">
+                        </div>
+                        <!-- Form Group (email address)-->
+                        <div class="mb-3">
+                            <label class="small mb-1" for="inputEmailAddress">Email</label>
+                            <input type="text" class="form-control" id="Email" name="Email" value="@Model.Email">
+                        </div>
+                        <!-- Form Row-->
+                        <div class="row gx-3 mb-3">
+                            <!-- Form Group (phone number)-->
+                            <div class="col-md-6">
+                                <label class="small mb-1" for="inputPhone">Điện thoại</label>
+                                <input type="text" class="form-control" id="DienThoai" name="DienThoai" value="@Model.DienThoai">
+                            </div>
+                            <!-- Form Group (birthday)-->
+                            <div class="col-md-6">
+                                <label class="small mb-1" for="inputBirthday">Ngày sinh</label>
+                                <input type="text" class="form-control" id="NgaySinh" name="NgaySinh" value="@Model.NgaySinh">
+
+                            </div>
+                        </div>
+                        <!-- Save changes button-->
+                        <button type="submit" class="btn btn-primary">Lưu thay đổi</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

@@ -13,8 +13,20 @@
       "PackagePath": "staticwebassets\\Hinh.zip"
     },
     {
+      "Id": "D:\\LapTrinhNam4\\KhoaLuan\\WebBanHangMVC\\WebBanHangMVC\\wwwroot\\Hinh\\HangHoaMoi\\01c2e478-de7c-416a-8151-860ed43d6503_1.jpg",
+      "PackagePath": "staticwebassets\\Hinh\\HangHoaMoi\\01c2e478-de7c-416a-8151-860ed43d6503_1.jpg"
+    },
+    {
+      "Id": "D:\\LapTrinhNam4\\KhoaLuan\\WebBanHangMVC\\WebBanHangMVC\\wwwroot\\Hinh\\HangHoaMoi\\83be3918-261a-4f03-baed-bdf103798cd8_1.jpg",
+      "PackagePath": "staticwebassets\\Hinh\\HangHoaMoi\\83be3918-261a-4f03-baed-bdf103798cd8_1.jpg"
+    },
+    {
       "Id": "D:\\LapTrinhNam4\\KhoaLuan\\WebBanHangMVC\\WebBanHangMVC\\wwwroot\\Hinh\\HangHoa\\1009.gif",
       "PackagePath": "staticwebassets\\Hinh\\HangHoa\\1009.gif"
+    },
+    {
+      "Id": "D:\\LapTrinhNam4\\KhoaLuan\\WebBanHangMVC\\WebBanHangMVC\\wwwroot\\Hinh\\HangHoa\\177b5025-e49a-49ee-8961-1af9816da73a_f1.jpg",
+      "PackagePath": "staticwebassets\\Hinh\\HangHoa\\177b5025-e49a-49ee-8961-1af9816da73a_f1.jpg"
     },
     {
       "Id": "D:\\LapTrinhNam4\\KhoaLuan\\WebBanHangMVC\\WebBanHangMVC\\wwwroot\\Hinh\\HangHoa\\21meTyhQebL._SL500_AA300_.jpg",
@@ -39,10 +51,6 @@
     {
       "Id": "D:\\LapTrinhNam4\\KhoaLuan\\WebBanHangMVC\\WebBanHangMVC\\wwwroot\\Hinh\\HangHoa\\31hCgES5GXL._AA300_.jpg",
       "PackagePath": "staticwebassets\\Hinh\\HangHoa\\31hCgES5GXL._AA300_.jpg"
-    },
-    {
-      "Id": "D:\\LapTrinhNam4\\KhoaLuan\\WebBanHangMVC\\WebBanHangMVC\\wwwroot\\Hinh\\HangHoa\\31ioCUUFnoL.jpg",
-      "PackagePath": "staticwebassets\\Hinh\\HangHoa\\31ioCUUFnoL.jpg"
     },
     {
       "Id": "D:\\LapTrinhNam4\\KhoaLuan\\WebBanHangMVC\\WebBanHangMVC\\wwwroot\\Hinh\\HangHoa\\31jsjfVfH9L._SL500_AA300_.jpg",
@@ -225,6 +233,10 @@
       "PackagePath": "staticwebassets\\Hinh\\HangHoa\\41zxxR71G+L._SL500_AA300_.jpg"
     },
     {
+      "Id": "D:\\LapTrinhNam4\\KhoaLuan\\WebBanHangMVC\\WebBanHangMVC\\wwwroot\\Hinh\\HangHoa\\4b47c7fd-8e98-4294-a386-1d7a2b15011f_1.jpg",
+      "PackagePath": "staticwebassets\\Hinh\\HangHoa\\4b47c7fd-8e98-4294-a386-1d7a2b15011f_1.jpg"
+    },
+    {
       "Id": "D:\\LapTrinhNam4\\KhoaLuan\\WebBanHangMVC\\WebBanHangMVC\\wwwroot\\Hinh\\HangHoa\\51+4d3VBFvL._SL500_AA300_.jpg",
       "PackagePath": "staticwebassets\\Hinh\\HangHoa\\51+4d3VBFvL._SL500_AA300_.jpg"
     },
@@ -297,6 +309,14 @@
       "PackagePath": "staticwebassets\\Hinh\\HangHoa\\51yomC0EodL._SL500_AA300_.jpg"
     },
     {
+      "Id": "D:\\LapTrinhNam4\\KhoaLuan\\WebBanHangMVC\\WebBanHangMVC\\wwwroot\\Hinh\\HangHoa\\5291c217-1352-4d72-b7f5-7a35713e5b5b_41BiMx1FKyL._SL500_AA300_.jpg",
+      "PackagePath": "staticwebassets\\Hinh\\HangHoa\\5291c217-1352-4d72-b7f5-7a35713e5b5b_41BiMx1FKyL._SL500_AA300_.jpg"
+    },
+    {
+      "Id": "D:\\LapTrinhNam4\\KhoaLuan\\WebBanHangMVC\\WebBanHangMVC\\wwwroot\\Hinh\\HangHoa\\6a3d5109-96e4-41be-a4e4-5ed8caf30887_r1.jpg",
+      "PackagePath": "staticwebassets\\Hinh\\HangHoa\\6a3d5109-96e4-41be-a4e4-5ed8caf30887_r1.jpg"
+    },
+    {
       "Id": "D:\\LapTrinhNam4\\KhoaLuan\\WebBanHangMVC\\WebBanHangMVC\\wwwroot\\Hinh\\HangHoa\\71bJrFAys9L._SL1280_.jpg",
       "PackagePath": "staticwebassets\\Hinh\\HangHoa\\71bJrFAys9L._SL1280_.jpg"
     },
@@ -329,12 +349,32 @@
       "PackagePath": "staticwebassets\\Hinh\\HangHoa\\91T2BjUkYmL._SL1500_.jpg"
     },
     {
+      "Id": "D:\\LapTrinhNam4\\KhoaLuan\\WebBanHangMVC\\WebBanHangMVC\\wwwroot\\Hinh\\HangHoa\\927cf731-1e97-4416-870c-cac294f7a76d_f1.jpg",
+      "PackagePath": "staticwebassets\\Hinh\\HangHoa\\927cf731-1e97-4416-870c-cac294f7a76d_f1.jpg"
+    },
+    {
       "Id": "D:\\LapTrinhNam4\\KhoaLuan\\WebBanHangMVC\\WebBanHangMVC\\wwwroot\\Hinh\\HangHoa\\Camera1.jpg",
       "PackagePath": "staticwebassets\\Hinh\\HangHoa\\Camera1.jpg"
     },
     {
       "Id": "D:\\LapTrinhNam4\\KhoaLuan\\WebBanHangMVC\\WebBanHangMVC\\wwwroot\\Hinh\\HangHoa\\To.gif",
       "PackagePath": "staticwebassets\\Hinh\\HangHoa\\To.gif"
+    },
+    {
+      "Id": "D:\\LapTrinhNam4\\KhoaLuan\\WebBanHangMVC\\WebBanHangMVC\\wwwroot\\Hinh\\HangHoa\\b7b410bf-87d7-423e-99d5-bec7c935acb2_hoshino.jpg",
+      "PackagePath": "staticwebassets\\Hinh\\HangHoa\\b7b410bf-87d7-423e-99d5-bec7c935acb2_hoshino.jpg"
+    },
+    {
+      "Id": "D:\\LapTrinhNam4\\KhoaLuan\\WebBanHangMVC\\WebBanHangMVC\\wwwroot\\Hinh\\HangHoa\\c9e41c37-894c-4d38-b56d-d15d608c2150_41BiMx1FKyL._SL500_AA300_.jpg",
+      "PackagePath": "staticwebassets\\Hinh\\HangHoa\\c9e41c37-894c-4d38-b56d-d15d608c2150_41BiMx1FKyL._SL500_AA300_.jpg"
+    },
+    {
+      "Id": "D:\\LapTrinhNam4\\KhoaLuan\\WebBanHangMVC\\WebBanHangMVC\\wwwroot\\Hinh\\HangHoa\\f1.jpg",
+      "PackagePath": "staticwebassets\\Hinh\\HangHoa\\f1.jpg"
+    },
+    {
+      "Id": "D:\\LapTrinhNam4\\KhoaLuan\\WebBanHangMVC\\WebBanHangMVC\\wwwroot\\Hinh\\KhachHang\\1.jpg",
+      "PackagePath": "staticwebassets\\Hinh\\KhachHang\\1.jpg"
     },
     {
       "Id": "D:\\LapTrinhNam4\\KhoaLuan\\WebBanHangMVC\\WebBanHangMVC\\wwwroot\\Hinh\\KhachHang\\15promax.jpg",
@@ -361,8 +401,24 @@
       "PackagePath": "staticwebassets\\Hinh\\KhachHang\\android_300200.png"
     },
     {
+      "Id": "D:\\LapTrinhNam4\\KhoaLuan\\WebBanHangMVC\\WebBanHangMVC\\wwwroot\\Hinh\\KhachHang\\fudball.jpg",
+      "PackagePath": "staticwebassets\\Hinh\\KhachHang\\fudball.jpg"
+    },
+    {
+      "Id": "D:\\LapTrinhNam4\\KhoaLuan\\WebBanHangMVC\\WebBanHangMVC\\wwwroot\\Hinh\\KhachHang\\hoshino.jpg",
+      "PackagePath": "staticwebassets\\Hinh\\KhachHang\\hoshino.jpg"
+    },
+    {
+      "Id": "D:\\LapTrinhNam4\\KhoaLuan\\WebBanHangMVC\\WebBanHangMVC\\wwwroot\\Hinh\\KhachHang\\ip2.jpg",
+      "PackagePath": "staticwebassets\\Hinh\\KhachHang\\ip2.jpg"
+    },
+    {
       "Id": "D:\\LapTrinhNam4\\KhoaLuan\\WebBanHangMVC\\WebBanHangMVC\\wwwroot\\Hinh\\KhachHang\\man.jpg",
       "PackagePath": "staticwebassets\\Hinh\\KhachHang\\man.jpg"
+    },
+    {
+      "Id": "D:\\LapTrinhNam4\\KhoaLuan\\WebBanHangMVC\\WebBanHangMVC\\wwwroot\\Hinh\\KhachHang\\r1.jpg",
+      "PackagePath": "staticwebassets\\Hinh\\KhachHang\\r1.jpg"
     },
     {
       "Id": "D:\\LapTrinhNam4\\KhoaLuan\\WebBanHangMVC\\WebBanHangMVC\\wwwroot\\Hinh\\KhachHang\\woman.jpg",

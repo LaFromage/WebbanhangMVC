@@ -2,10 +2,8 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using WebBanHangMVC.Areas.Admin.ViewModels;
 using WebBanHangMVC.Data;
-using WebBanHangMVC.Helpers;
-using WebBanHangMVC.ViewModels;
+using X.PagedList;
 
 namespace WebBanHangMVC.Areas.Admin.Controllers
 {
@@ -31,10 +29,22 @@ namespace WebBanHangMVC.Areas.Admin.Controllers
         }
 
         [Route("DanhMucSanPham")]
-        public IActionResult DanhMucSanPham()
+        public IActionResult DanhMucSanPham(int? page, string searchString)
         {
-            var listSanPham = db.HangHoas.ToList();
-            return View(listSanPham);
+            int pageSize = 5;
+            int pageNumber = page ?? 1;
+
+            var listSanPham = db.HangHoas.AsQueryable();
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                listSanPham = listSanPham.Where(hh => hh.TenHh.Contains(searchString));
+                ViewData["CurrentFilter"] = searchString;
+            }
+
+            listSanPham = listSanPham.OrderBy(hh => hh.MaHh);
+
+            return View(listSanPham.ToPagedList(pageNumber, pageSize));
         }
 
         [Route("ThemSanPham")]
@@ -49,13 +59,30 @@ namespace WebBanHangMVC.Areas.Admin.Controllers
         [Route("ThemSanPham")]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult ThemSanPham(HangHoa sanPham)
+        public IActionResult ThemSanPham(HangHoa sanPham, IFormFile Hinh)
         {
             if (ModelState.IsValid)
             {
-                db.HangHoas.Add(sanPham);
-                db.SaveChanges();
-                return RedirectToAction("DanhMucSanPham");
+                try
+                {
+                    if (Hinh != null && Hinh.Length > 0)
+                    {
+                        var uniqueFileName = Guid.NewGuid().ToString() + "_" + Path.GetFileName(Hinh.FileName);
+                        var imagePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "Hinh", "HangHoa", uniqueFileName);
+                        using (var stream = new FileStream(imagePath, FileMode.Create))
+                        {
+                            Hinh.CopyTo(stream);
+                        }
+                        sanPham.Hinh = uniqueFileName;
+                    }
+                    db.HangHoas.Add(sanPham);
+                    db.SaveChanges();
+                    return RedirectToAction("DanhMucSanPham");
+                }
+                catch (Exception ex)
+                {
+                    // Log or handle the error as needed
+                }
             }
             return View(sanPham);
         }
@@ -106,18 +133,23 @@ namespace WebBanHangMVC.Areas.Admin.Controllers
             return RedirectToAction("DanhMucSanPham", "HomeAdmin");
         }
 
-        [Route("DanhSachHoaDon")]
-        public IActionResult DanhSachHoaDon()
-        {
-            var listHoaDon = db.HoaDons.ToList();
-            return View(listHoaDon);
-        }
-
         [Route("DanhSachDanhMucSanPham")]
-        public IActionResult DanhSachDanhMucSanPham()
+        public IActionResult DanhSachDanhMucSanPham(int? page, string searchString)
         {
-            var listDanhMucSP = db.Loais.ToList();
-            return View(listDanhMucSP);
+            int pageSize = 5;
+            int pageNumber = page ?? 1;
+
+            var listDanhMucSP = db.Loais.AsQueryable();
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                listDanhMucSP = listDanhMucSP.Where(dm => dm.TenLoai.Contains(searchString));
+                ViewData["CurrentFilter"] = searchString;
+            }
+
+            listDanhMucSP = listDanhMucSP.OrderBy(dm => dm.MaLoai);
+
+            return View(listDanhMucSP.ToPagedList(pageNumber, pageSize));
         }
 
         [Route("ThemDanhMucSanPham")]
@@ -183,6 +215,71 @@ namespace WebBanHangMVC.Areas.Admin.Controllers
             db.SaveChanges();
             TempData["Message"] = "Sản phẩm đã được xóa";
             return RedirectToAction("DanhSachDanhMucSanPham", "HomeAdmin");
+        }
+
+        [Route("DanhSachHoaDon")]
+        public IActionResult DanhSachHoaDon(int? page, string searchString)
+        {
+            int pageSize = 5;
+            int pageNumber = page ?? 1;
+
+            var listHoaDon = db.HoaDons.AsQueryable();
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                listHoaDon = listHoaDon.Where(hd => hd.HoTen.Contains(searchString));
+                ViewData["CurrentFilter"] = searchString;
+            }
+
+            listHoaDon = listHoaDon.OrderBy(hd => hd.MaHd);
+
+            Dictionary<int, string> trangThaiMapping = new Dictionary<int, string>()
+            {
+                { -1, "Khách hàng hủy đơn hàng" },
+                { 0, "Mới đặt hàng" },
+                { 1, "Chờ giao hàng" },
+                { 2, "Đã giao hàng" }
+            };
+            ViewBag.TrangThaiMapping = trangThaiMapping;
+
+            return View(listHoaDon.ToPagedList(pageNumber, pageSize));
+        }
+
+        [Route("ChiTietHoaDon/{maHd}")]
+        public IActionResult ChiTietHoaDon(int maHd)
+        {
+            var hoaDon = db.HoaDons.Include(h => h.ChiTietHds).ThenInclude(ct => ct.MaHhNavigation).FirstOrDefault(h => h.MaHd == maHd);
+            if (hoaDon == null)
+            {
+                return NotFound();
+            }
+
+            return View(hoaDon);
+        }
+
+        [HttpGet]
+        [Route("ChonTrangThai/{maHd}")]
+        public IActionResult ChonTrangThai(int maHd)
+        {
+            ViewBag.DanhSachTrangThai = db.TrangThais.ToList();
+            return View(maHd);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [Route("ChonTrangThai/{maHd}")]
+        public IActionResult ChonTrangThai(int maHd, int maTrangThaiMoi)
+        {
+            var hoaDon = db.HoaDons.FirstOrDefault(h => h.MaHd == maHd);
+            if (hoaDon == null)
+            {
+                return NotFound();
+            }
+
+            hoaDon.MaTrangThai = maTrangThaiMoi;
+            db.SaveChanges();
+            TempData["Message"] = "Chuyển trạng thái thành công";
+            return RedirectToAction("DanhSachHoaDon", "HomeAdmin");
         }
     }
 }

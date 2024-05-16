@@ -76,13 +76,13 @@
                             @if (User.Identity.IsAuthenticated)
                             {
                                 <a asp-controller="KhachHang" asp-action="Profile" title="Xem thông tin người dùng" class="my-auto">
-                                    <i class="fas fa-user fa-2x"></i>
+                                    <i class="fas fa-user fa-2x" style="color:#A0522D"></i>
                                 </a>
                             }
                             else
                             {
                                 <a asp-controller="KhachHang" asp-action="DangNhap" title="Đăng nhập" class="my-auto">
-                                    <i class="fas fa-user fa-2x"></i>
+                                    <i class="fas fa-user fa-2x" style="color:#A0522D"></i>
                                 </a>
                             }
                         </div>

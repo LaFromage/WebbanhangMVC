@@ -453,7 +453,7 @@
 
 /*** Single Page Start ***/
 .pagination {
-    display: inline-block;
+    display: flex;
 }
   
 .pagination a {
@@ -461,15 +461,20 @@
     padding: 10px 16px;
     text-decoration: none;
     transition: 0.5s;
+    border-radius: 1em;
     border: 1px solid var(--bs-secondary);
     margin: 0 4px;
 }
-  
-.pagination a.active {
-    background-color: var(--bs-primary);
-    color: var(--bs-light);
-    border: 1px solid var(--bs-secondary);
-}
+
+    .pagination a.active {
+        color: red;
+        padding: 10px 16px;
+        text-decoration: none;
+        transition: 0.5s;
+        border-radius: 1em;
+        border: 1px solid var(--bs-secondary);
+        margin: 0 4px;
+    }
   
 .pagination a:hover:not(.active) {background-color: var(--bs-primary)}
 

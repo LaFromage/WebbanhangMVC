@@ -7,6 +7,7 @@ using WebBanHangMVC.Data;
 using WebBanHangMVC.Helpers;
 using WebBanHangMVC.ViewModels;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.EntityFrameworkCore;
 
 namespace WebBanHangMVC.Controllers
 {
@@ -39,7 +40,6 @@ namespace WebBanHangMVC.Controllers
                     khachHang.MatKhau = model.MatKhau.ToMd5Hash(khachHang.RandomKey);
                     khachHang.HieuLuc = true;
                     khachHang.VaiTro = 0;
-
                     if (Hinh != null)
                     {
                         khachHang.Hinh = Util.UploadHinh(Hinh, "KhachHang");
@@ -119,7 +119,13 @@ namespace WebBanHangMVC.Controllers
         [Authorize]
         public IActionResult Profile()
         {
-            return View();
+            var MaKh = User.Claims.FirstOrDefault(c => c.Type == MyConstants.CLAM_CUSTOMER_ID)?.Value;
+            var customer = db.KhachHangs.FirstOrDefault(kh => kh.MaKh == MaKh);
+            if (customer == null)
+            {
+                return NotFound();
+            }
+            return View(customer);
         }
 
         [Authorize]
@@ -127,6 +133,76 @@ namespace WebBanHangMVC.Controllers
         {
             await HttpContext.SignOutAsync();
             return RedirectToAction("Index", "HangHoa");
+        }
+
+        [Authorize]
+        [HttpGet]
+        public IActionResult ChinhSuaProfile()
+        {
+            var MaKh = User.Claims.FirstOrDefault(c => c.Type == MyConstants.CLAM_CUSTOMER_ID)?.Value;
+            var customer = db.KhachHangs.FirstOrDefault(kh => kh.MaKh == MaKh);
+            if (customer == null)
+            {
+                return NotFound();
+            }
+            return View(customer);
+        }
+
+        [Authorize]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult ChinhSuaProfile(KhachHang model, IFormFile Hinh)
+        {
+            if (ModelState.IsValid)
+            {
+                var MaKh = User.Claims.FirstOrDefault(c => c.Type == MyConstants.CLAM_CUSTOMER_ID)?.Value;
+                var customer = db.KhachHangs.FirstOrDefault(kh => kh.MaKh == MaKh);
+                if (customer == null)
+                {
+                    return NotFound();
+                }
+                customer.HoTen = model.HoTen;
+                customer.Email = model.Email;
+                customer.DiaChi = model.DiaChi;
+                customer.DienThoai = model.DienThoai;
+                customer.NgaySinh = model.NgaySinh;
+                if (Hinh != null)
+                {
+                    customer.Hinh = Util.UploadHinh(Hinh, "KhachHang");
+                }
+                db.SaveChanges();
+                return RedirectToAction("Profile");
+            }
+            return View(model);
+        }
+
+        [Authorize]
+        public IActionResult DanhSachHoaDon()
+        {
+            var MaKh = User.Claims.FirstOrDefault(c => c.Type == MyConstants.CLAM_CUSTOMER_ID)?.Value;
+            var hoaDons = db.HoaDons.Where(hd => hd.MaKh == MaKh).ToList();
+            Dictionary<int, string> trangThaiMapping = new Dictionary<int, string>()
+            {
+                { -1, "Khách hàng hủy đơn hàng" },
+                { 0, "Mới đặt hàng" },
+                { 1, "Chờ giao hàng" },
+                { 2, "Đã giao hàng" }
+            };
+            ViewBag.TrangThaiMapping = trangThaiMapping;
+            return View(hoaDons);
+        }
+
+        [Authorize]
+        [Route("ChiTietHoaDon/{maHd}")]
+        public IActionResult ChiTietHoaDon(int maHd)
+        {
+            var hoaDon = db.HoaDons.Include(h => h.ChiTietHds).ThenInclude(ct => ct.MaHhNavigation).FirstOrDefault(h => h.MaHd == maHd);
+            if (hoaDon == null)
+            {
+                return NotFound();
+            }
+
+            return View(hoaDon);
         }
     }
 }

@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using WebBanHangMVC.Data;
 using WebBanHangMVC.ViewModels;
+using X.PagedList;
 
 namespace WebBanHangMVC.Controllers
 {
@@ -13,8 +14,12 @@ namespace WebBanHangMVC.Controllers
         {
             db = context;
         }
-        public IActionResult Index(int? loai)
+
+        public IActionResult Index(int? loai, int? page)
         {
+            int pageSize = 6;
+            int pageNumber = page ?? 1;
+
             var hangHoas = db.HangHoas.AsQueryable();
 
             if (loai.HasValue)
@@ -29,12 +34,15 @@ namespace WebBanHangMVC.Controllers
                 Hinh = p.Hinh ?? "",
                 MoTaNgan = p.MoTaDonVi ?? "",
                 TenLoai = p.MaLoaiNavigation.TenLoai,
-            });
+            }).ToPagedList(pageNumber, pageSize);
             return View(result);
         }
 
-        public IActionResult Search(string? query)
+        public IActionResult Search(string? query, int? page)
         {
+            int pageSize = 6;
+            int pageNumber = page ?? 1;
+
             var hangHoas = db.HangHoas.AsQueryable();
 
             if (query != null)
@@ -49,7 +57,7 @@ namespace WebBanHangMVC.Controllers
                 Hinh = p.Hinh ?? "",
                 MoTaNgan = p.MoTaDonVi ?? "",
                 TenLoai = p.MaLoaiNavigation.TenLoai,
-            });
+            }).ToPagedList(pageNumber, pageSize);
             return View(result);
         }
 
