@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -10,6 +12,7 @@ namespace WebBanHangMVC.Areas.Admin.Controllers
     [Area("Admin")]
     [Route("Admin")]
     [Route("Admin/HomeAdmin")]
+    [Authorize(Policy = "RequireAdminRole")]
     public class HomeAdminController : Controller
     {
         private readonly EshopContext db;
@@ -21,6 +24,8 @@ namespace WebBanHangMVC.Areas.Admin.Controllers
             _mapper = mapper;
         }
 
+        [Authorize]
+        [HttpGet]  // Chỉ định action này chỉ xử lý request GET
         [Route("")]
         [Route("Index")]
         public IActionResult Index()
@@ -28,6 +33,7 @@ namespace WebBanHangMVC.Areas.Admin.Controllers
             return View();
         }
 
+        [Authorize]
         [Route("DanhMucSanPham")]
         public IActionResult DanhMucSanPham(int? page, string searchString)
         {
@@ -47,6 +53,7 @@ namespace WebBanHangMVC.Areas.Admin.Controllers
             return View(listSanPham.ToPagedList(pageNumber, pageSize));
         }
 
+        [Authorize]
         [Route("ThemSanPham")]
         [HttpGet]
         public IActionResult ThemSanPham()
@@ -56,6 +63,7 @@ namespace WebBanHangMVC.Areas.Admin.Controllers
             return View();
         }
 
+        [Authorize]
         [Route("ThemSanPham")]
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -87,6 +95,7 @@ namespace WebBanHangMVC.Areas.Admin.Controllers
             return View(sanPham);
         }
 
+        [Authorize]
         [Route("SuaSanPham")]
         [HttpGet]
         public IActionResult SuaSanPham(int maSanPham)
@@ -97,6 +106,7 @@ namespace WebBanHangMVC.Areas.Admin.Controllers
             return View(sanPham);
         }
 
+        [Authorize]
         [Route("SuaSanPham")]
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -111,6 +121,7 @@ namespace WebBanHangMVC.Areas.Admin.Controllers
             return View(sanPham);
         }
 
+        [Authorize]
         [Route("XoaSanPham")]
         [HttpGet]
         public IActionResult XoaSanPham(int maSanPham)
@@ -133,6 +144,7 @@ namespace WebBanHangMVC.Areas.Admin.Controllers
             return RedirectToAction("DanhMucSanPham", "HomeAdmin");
         }
 
+        [Authorize]
         [Route("DanhSachDanhMucSanPham")]
         public IActionResult DanhSachDanhMucSanPham(int? page, string searchString)
         {
@@ -152,6 +164,7 @@ namespace WebBanHangMVC.Areas.Admin.Controllers
             return View(listDanhMucSP.ToPagedList(pageNumber, pageSize));
         }
 
+        [Authorize]
         [Route("ThemDanhMucSanPham")]
         [HttpGet]
         public IActionResult ThemDanhMucSanPham()
@@ -159,6 +172,7 @@ namespace WebBanHangMVC.Areas.Admin.Controllers
             return View();
         }
 
+        [Authorize]
         [Route("ThemDanhMucSanPham")]
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -173,6 +187,7 @@ namespace WebBanHangMVC.Areas.Admin.Controllers
             return View(danhMucSP);
         }
 
+        [Authorize]
         [Route("SuaDanhMucSanPham")]
         [HttpGet]
         public IActionResult SuaDanhMucSanPham(int maLoai)
@@ -181,6 +196,7 @@ namespace WebBanHangMVC.Areas.Admin.Controllers
             return View(danhMucSP);
         }
 
+        [Authorize]
         [Route("SuaDanhMucSanPham")]
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -194,7 +210,7 @@ namespace WebBanHangMVC.Areas.Admin.Controllers
             }
             return View(danhMucSP);
         }
-
+        [Authorize]
         [Route("XoaDanhMucSanPham")]
         [HttpGet]
         public IActionResult XoaDanhMucSanPham(int maLoai)
@@ -217,6 +233,7 @@ namespace WebBanHangMVC.Areas.Admin.Controllers
             return RedirectToAction("DanhSachDanhMucSanPham", "HomeAdmin");
         }
 
+        [Authorize]
         [Route("DanhSachHoaDon")]
         public IActionResult DanhSachHoaDon(int? page, string searchString)
         {
@@ -245,6 +262,7 @@ namespace WebBanHangMVC.Areas.Admin.Controllers
             return View(listHoaDon.ToPagedList(pageNumber, pageSize));
         }
 
+        [Authorize]
         [Route("ChiTietHoaDon/{maHd}")]
         public IActionResult ChiTietHoaDon(int maHd)
         {
@@ -257,6 +275,7 @@ namespace WebBanHangMVC.Areas.Admin.Controllers
             return View(hoaDon);
         }
 
+        [Authorize]
         [HttpGet]
         [Route("ChonTrangThai/{maHd}")]
         public IActionResult ChonTrangThai(int maHd)
@@ -265,6 +284,7 @@ namespace WebBanHangMVC.Areas.Admin.Controllers
             return View(maHd);
         }
 
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Route("ChonTrangThai/{maHd}")]
@@ -280,6 +300,15 @@ namespace WebBanHangMVC.Areas.Admin.Controllers
             db.SaveChanges();
             TempData["Message"] = "Chuyển trạng thái thành công";
             return RedirectToAction("DanhSachHoaDon", "HomeAdmin");
+        }
+
+        [Authorize]
+        [HttpPost] // Chỉ định action này chỉ xử lý request POST
+        [Route("DangXuat")]
+        public async Task<IActionResult> DangXuat()
+        {
+            await HttpContext.SignOutAsync();
+            return Redirect(Url.Action("Index", ""));
         }
     }
 }

@@ -78,7 +78,7 @@ namespace WebBanHangMVC.Controllers
                 {
                     if (!khachHang.HieuLuc)
                     {
-                        ModelState.AddModelError("loi", "Tài khoản khôn còn hiệu lực.");
+                        ModelState.AddModelError("loi", "Tài khoản không còn hiệu lực.");
                     }
                     else
                     {
@@ -89,11 +89,19 @@ namespace WebBanHangMVC.Controllers
                         else
                         {
                             var claims = new List<Claim> {
-                                new Claim(ClaimTypes.Email, khachHang.Email),
-                                new Claim(ClaimTypes.Name, khachHang.HoTen),
-                                new Claim(MyConstants.CLAM_CUSTOMER_ID, khachHang.MaKh),
-                                new Claim(ClaimTypes.Role, "Customer")
+                        new Claim(ClaimTypes.Email, khachHang.Email),
+                        new Claim(ClaimTypes.Name, khachHang.HoTen),
+                        new Claim(MyConstants.CLAM_CUSTOMER_ID, khachHang.MaKh)
                             };
+
+                            if (khachHang.MaKh.ToLower() == "admin")
+                            {
+                                claims.Add(new Claim(ClaimTypes.Role, "Admin")); // Thêm Claim Role "Admin"
+                            }
+                            else
+                            {
+                                claims.Add(new Claim(ClaimTypes.Role, "Customer")); // Thêm Claim Role "Customer"
+                            }
 
                             var claimsIdentity = new ClaimsIdentity(claims,
                                 CookieAuthenticationDefaults.AuthenticationScheme);
@@ -101,13 +109,22 @@ namespace WebBanHangMVC.Controllers
 
                             await HttpContext.SignInAsync(claimsPrincipal);
 
-                            if (Url.IsLocalUrl(ReturnUrl))
+                            if (khachHang.MaKh.ToLower() == "admin")
                             {
-                                return Redirect(ReturnUrl);
+                                // Chuyển hướng đến trang Admin (ví dụ: /Admin/Index)
+                                return RedirectToAction("Index", "HomeAdmin", new { area = "Admin" });
                             }
                             else
                             {
-                                return RedirectToAction("Index", "HangHoa");
+                                if (Url.IsLocalUrl(ReturnUrl))
+                                {
+                                    return Redirect(ReturnUrl);
+                                }
+                                else
+                                {
+                                    // Chuyển hướng đến trang khách hàng (ví dụ: /HangHoa/Index)
+                                    return RedirectToAction("Index", "HangHoa");
+                                }
                             }
                         }
                     }
@@ -115,6 +132,7 @@ namespace WebBanHangMVC.Controllers
             }
             return View();
         }
+
 
         [Authorize]
         public IActionResult Profile()
@@ -161,15 +179,18 @@ namespace WebBanHangMVC.Controllers
                 {
                     return NotFound();
                 }
+
+                // Cập nhật các thông tin khác
                 customer.HoTen = model.HoTen;
                 customer.Email = model.Email;
                 customer.DiaChi = model.DiaChi;
                 customer.DienThoai = model.DienThoai;
                 customer.NgaySinh = model.NgaySinh;
-                if (Hinh != null)
-                {
-                    customer.Hinh = Util.UploadHinh(Hinh, "KhachHang");
-                }
+
+                // Cập nhật hình ảnh (có thể giữ nguyên hoặc thay đổi)
+                customer.Hinh = Util.UploadHinh(Hinh, "KhachHang", customer.Hinh);
+
+                db.Entry(customer).State = EntityState.Modified; // Thêm dòng này
                 db.SaveChanges();
                 return RedirectToAction("Profile");
             }

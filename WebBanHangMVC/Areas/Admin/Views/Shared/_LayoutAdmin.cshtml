@@ -60,7 +60,9 @@
                 </div>
             </li>
             <!-- Divider -->
-            <hr class="sidebar-divider d-none d-md-block">
+            <form asp-action="DangXuat" asp-controller="HomeAdmin" method="post">
+                <button type="submit" class="btn btn-primary" style="margin-left:50px">Đăng xuất</button>
+            </form>
         </ul>
         <!-- End of Sidebar -->
         <!-- Content Wrapper -->
@@ -92,7 +94,7 @@
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Admin 2024</span>
+                        <!-- Text here (VD: Copyright 2024) -->
                     </div>
                 </div>
             </footer>

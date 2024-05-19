@@ -313,6 +313,10 @@
       "PackagePath": "staticwebassets\\Hinh\\HangHoa\\5291c217-1352-4d72-b7f5-7a35713e5b5b_41BiMx1FKyL._SL500_AA300_.jpg"
     },
     {
+      "Id": "D:\\LapTrinhNam4\\KhoaLuan\\WebBanHangMVC\\WebBanHangMVC\\wwwroot\\Hinh\\HangHoa\\5f513cf2-9e28-434c-a710-aa1820b1c3b7_ip2.jpg",
+      "PackagePath": "staticwebassets\\Hinh\\HangHoa\\5f513cf2-9e28-434c-a710-aa1820b1c3b7_ip2.jpg"
+    },
+    {
       "Id": "D:\\LapTrinhNam4\\KhoaLuan\\WebBanHangMVC\\WebBanHangMVC\\wwwroot\\Hinh\\HangHoa\\6a3d5109-96e4-41be-a4e4-5ed8caf30887_r1.jpg",
       "PackagePath": "staticwebassets\\Hinh\\HangHoa\\6a3d5109-96e4-41be-a4e4-5ed8caf30887_r1.jpg"
     },
@@ -399,6 +403,14 @@
     {
       "Id": "D:\\LapTrinhNam4\\KhoaLuan\\WebBanHangMVC\\WebBanHangMVC\\wwwroot\\Hinh\\KhachHang\\android_300200.png",
       "PackagePath": "staticwebassets\\Hinh\\KhachHang\\android_300200.png"
+    },
+    {
+      "Id": "D:\\LapTrinhNam4\\KhoaLuan\\WebBanHangMVC\\WebBanHangMVC\\wwwroot\\Hinh\\KhachHang\\chinese girl meme.jpg",
+      "PackagePath": "staticwebassets\\Hinh\\KhachHang\\chinese girl meme.jpg"
+    },
+    {
+      "Id": "D:\\LapTrinhNam4\\KhoaLuan\\WebBanHangMVC\\WebBanHangMVC\\wwwroot\\Hinh\\KhachHang\\f57c4f63-524a-4b0a-821f-fa62eabb5b15_hoshino.jpg",
+      "PackagePath": "staticwebassets\\Hinh\\KhachHang\\f57c4f63-524a-4b0a-821f-fa62eabb5b15_hoshino.jpg"
     },
     {
       "Id": "D:\\LapTrinhNam4\\KhoaLuan\\WebBanHangMVC\\WebBanHangMVC\\wwwroot\\Hinh\\KhachHang\\fudball.jpg",

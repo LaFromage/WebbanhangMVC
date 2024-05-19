@@ -71,6 +71,7 @@ namespace WebBanHangMVC.Controllers
         }
 
         [Authorize]
+        [Authorize(Policy = "RequireCustomerRole")]
         [HttpGet]
         public IActionResult Checkout()
         {
@@ -83,6 +84,7 @@ namespace WebBanHangMVC.Controllers
         }
 
         [Authorize]
+        [Authorize(Policy = "RequireCustomerRole")]
         [HttpPost]
         public IActionResult Checkout(CheckOutVM model)
         {
@@ -143,6 +145,7 @@ namespace WebBanHangMVC.Controllers
         }
 
         [Authorize]
+        [Authorize(Policy = "RequireCustomerRole")]
         [HttpPost("/Cart/create-paypal-order")]
         public async Task<IActionResult> CreatePaypalOrder(CancellationToken cancellationToken)
         {
@@ -163,6 +166,7 @@ namespace WebBanHangMVC.Controllers
         }
 
         [Authorize]
+        [Authorize(Policy = "RequireCustomerRole")]
         [HttpPost("/Cart/capture-paypal-order")]
         public async Task<IActionResult> CapturePaypalOrder(string hoTen, string diaChi, string dienThoai, string ghiChu, string orderID, CancellationToken cancellationToken)
         {

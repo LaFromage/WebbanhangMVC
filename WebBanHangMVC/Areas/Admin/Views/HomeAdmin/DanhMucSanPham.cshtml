@@ -9,69 +9,74 @@
 }
 
 <h1>Danh mục sản phẩm</h1>
+<br />
 <p>@TempData["Message"]</p>
-<form asp-action="DanhMucSanPham" method="get" class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search" style="margin-bottom:5px">
-    <div class="input-group">
-        <input type="text" name="searchString" class="form-control bg-light border-0 small" placeholder="Tìm kiếm" value="@ViewData["CurrentFilter"]">
-        <div class="input-group-append">
-            <button class="btn btn-primary" type="submit"><i class="fas fa-search fa-sm"></i></button>
+<div class="container">
+    <div class="row" style="width: 1500px; margin-left: -450px">
+        <div class="col-12 mb-3 mb-lg-5">
+            <div class="position-relative card table-nowrap table-card">
+                <div class="card-header align-items-center">
+                    <form asp-action="DanhMucSanPham" method="get" class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search" style="margin-bottom:5px">
+                        <div class="input-group">
+                            <input type="text" name="searchString" class="form-control bg-light border-0 small" placeholder="Tìm kiếm" value="@ViewData["CurrentFilter"]">
+                            <div class="input-group-append">
+                                <button class="btn btn-primary" type="submit"><i class="fas fa-search fa-sm"></i></button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="table-responsive">
+                    <table class="table mb-0">
+                        <thead class="small text-uppercase bg-body text-muted">
+                            <tr class="table-success">
+                                <th>Tên Hàng Hóa</th>
+                                <th>Đơn Vị</th>
+                                <th>Đơn Giá</th>
+                                <th>Hình</th>
+                                <th>Mô Tả Hàng Hóa</th>
+                                <th>Hành động</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr class="align-middle">
+                                    <td style="width:200px">
+                                        @Html.DisplayFor(modelItem => item.TenHh)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.MoTaDonVi)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.DonGia)<a>   VND</a>
+                                    </td>
+                                    <td style="width:200px">
+                                        <img src="~/Hinh/HangHoa/@item.Hinh" style="width:100px; height:100px" />
+                                    </td>
+                                    <td style="width:500px">
+                                        @Html.DisplayFor(modelItem => item.MoTa)
+                                    </td>
+                                    <td style="width: 200px">
+                                        <a asp-action="SuaSanPham" asp-route-maSanPham="@item.MaHh" class="btn btn-primary">Sửa</a>
+                                        <a asp-action="XoaSanPham" asp-route-maSanPham="@item.MaHh" class="btn btn-primary">Xóa</a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+                <div class="card-footer text-end">
+                    <a asp-action="ThemSanPham" class="btn btn-primary">Create New</a>
+                </div>
+            </div>
         </div>
     </div>
-</form>
-<p>
-    <a asp-action="ThemSanPham">Create New</a>
-</p>
-
-<table class="table">
-    <thead>
-        <tr class="table-success">
-            <th style="width:200px">
-                Tên Hàng Hóa
-            </th>
-            <th>
-                Đơn Vị
-            </th>
-            <th>
-                Đơn Giá
-            </th>
-            <th style="width:200px">
-                Hình
-            </th>
-            <th>
-                Mô Tả Hàng Hóa
-            </th>
-            <th>
-                Hành động
-            </th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-            <tr class>
-                <td style="width:200px">
-                    @Html.DisplayFor(modelItem => item.TenHh)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.MoTaDonVi)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.DonGia)
-                </td>
-                <td style="width:200px">
-                    <img src="~/Hinh/HangHoa/@item.Hinh" style="width:100px; height:100px" />
-                </td>
-                <td style="width:400px">
-                    @Html.DisplayFor(modelItem => item.MoTa)
-                </td>
-                <td>
-                    <a asp-action="SuaSanPham" asp-route-maSanPham="@item.MaHh">Sửa</a>
-                    <a asp-action="XoaSanPham" asp-route-maSanPham="@item.MaHh">Xóa</a>
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
+</div>
 <div class="pagination d-flex justify-content-center mt-5">
-    @Html.PagedListPager(Model, page => Url.Action("DanhMucSanPham", new { page, searchString = ViewData["CurrentFilter"] }))
+    @Html.PagedListPager(Model, page => Url.Action("DanhMucSanPham", new { page, searchString = ViewData["CurrentFilter"] }),
+            new PagedListRenderOptions
+    {
+        LiElementClasses = new string[] { "page-item" },
+        PageClasses = new string[] { "page-link" }
+    })
 </div>

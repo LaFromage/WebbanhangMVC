@@ -9,58 +9,67 @@
 }
 
 <h1>Danh Sách Danh Mục Sản Phẩm</h1>
+<br />
+<br />
 <p>@TempData["Message"]</p>
-<form asp-action="DanhSachDanhMucSanPham" method="get" class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-    <div class="input-group">
-        <input type="text" name="searchString" class="form-control bg-light border-0 small" placeholder="Tìm kiếm" value="@ViewData["CurrentFilter"]">
-        <div class="input-group-append">
-            <button class="btn btn-primary" type="submit"><i class="fas fa-search fa-sm"></i></button>
+<div class="container">
+    <div class="row" style="width: 1000px; margin-left: -200px">
+        <div class="col-12 mb-3 mb-lg-5">
+            <div class="position-relative card table-nowrap table-card">
+                <div class="card-header align-items-center">
+                    <form asp-action="DanhSachDanhMucSanPham" method="get" class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                        <div class="input-group">
+                            <input type="text" name="searchString" class="form-control bg-light border-0 small" placeholder="Tìm kiếm" value="@ViewData["CurrentFilter"]">
+                            <div class="input-group-append">
+                                <button class="btn btn-primary" type="submit"><i class="fas fa-search fa-sm"></i></button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="table-responsive">
+                    <table class="table mb-0">
+                        <thead class="small text-uppercase bg-body text-muted">
+                            <tr class="table-danger">
+                                <th> Tên Danh Mục</th>
+                                <th>Tên mã danh mục</th>
+                                <th>Mô Tả danh mục</th>
+                                <th>Hành Động</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr class="align-middle">
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.TenLoai)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.TenLoaiAlias)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.MoTa)
+                                    </td>
+                                    <td style="width: 150px">
+                                        <a asp-action="SuaDanhMucSanPham" asp-route-maLoai="@item.MaLoai" class="btn btn-primary">Sửa</a>
+                                        <a asp-action="XoaDanhMucSanPham" asp-route-maLoai="@item.MaLoai" class="btn btn-primary">Xóa</a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+                <div class="card-footer text-end">
+                    <a asp-action="ThemDanhMucSanPham" class="btn btn-primary">Create New</a>
+                </div>
+            </div>
         </div>
     </div>
-</form>
-<p>
-    <a asp-action="ThemDanhMucSanPham">Create New</a>
-</p>
-
-<table class="table">
-    <thead>
-        <tr class="table-danger">
-            <th>
-                Tên Danh Mục
-            </th>
-            <th>
-                Tên mã danh mục
-            </th>
-            <th>
-                Mô Tả danh mục
-            </th>
-            <th>
-                Hành Động
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.TenLoai)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.TenLoaiAlias)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.MoTa)
-                </td>
-                <td>
-                    <a asp-action="SuaDanhMucSanPham" asp-route-maLoai="@item.MaLoai">Sửa</a>
-                    <a asp-action="XoaDanhMucSanPham" asp-route-maLoai="@item.MaLoai">Xóa</a>
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
+</div>
 <div class="pagination d-flex justify-content-center mt-5">
-    @Html.PagedListPager(Model, page => Url.Action("DanhSachDanhMucSanPham", new { page, searchString = ViewData["CurrentFilter"] }))
+    @Html.PagedListPager(Model, page => Url.Action("DanhSachDanhMucSanPham", new { page, searchString = ViewData["CurrentFilter"] }),
+            new PagedListRenderOptions
+    {
+        LiElementClasses = new string[] { "page-item" },
+        PageClasses = new string[] { "page-link" }
+    })
 </div>

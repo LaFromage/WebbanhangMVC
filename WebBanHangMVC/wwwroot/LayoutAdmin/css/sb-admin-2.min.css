@@ -9,6 +9,35 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
 
+.trang-thai-huy-don {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.trang-thai-moi-dat {
+    background-color: #d1ecf1;
+    color: #0c5460;
+}
+
+.trang-thai-cho-giao {
+    background-color: #FFDEAD;
+    color: #856404;
+}
+
+.trang-thai-da-giao {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.pagination .page-item.active .page-link {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.pagination .page-item .page-link {
+    color: #007bff;
+}
+
 :root {
     --blue: #4e73df;
     --indigo: #6610f2;
@@ -511,12 +540,20 @@ pre {
     overflow-y: scroll
 }
 
-.container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl {
+.container-fluid, .container-lg, .container-md, .container-sm, .container-xl {
     width: 100%;
     padding-right: .75rem;
     padding-left: .75rem;
     margin-right: auto;
     margin-left: auto
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: auto;
 }
 
 @media (min-width:576px) {
@@ -545,9 +582,10 @@ pre {
 
 .row {
     display: flex;
-    flex-wrap: wrap;
-    margin-right: -.75rem;
-    margin-left: -.75rem
+    margin: auto;
+    justify-content: center;
+    width: 1690px;
+    margin-left: -550px;
 }
 
 .no-gutters {
@@ -4715,20 +4753,19 @@ input[type=button].btn-block, input[type=reset].btn-block, input[type=submit].bt
 
 .pagination {
     display: flex;
-    padding-left: 0;
+    flex: 1;
     list-style: none;
-    border-radius: .35rem
+    padding: 0;
+    gap: .625rem;
 }
 
 .page-link {
-    position: relative;
-    display: block;
-    padding: .5rem .75rem;
-    margin-left: -1px;
-    line-height: 1.25;
-    color: #4e73df;
-    background-color: #fff;
-    border: 1px solid #dddfeb
+    height: 2rem;
+    width: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid;
 }
 
     .page-link:hover {

@@ -1,6 +1,5 @@
 ﻿@using Microsoft.AspNetCore.Mvc
 @model WebBanHangMVC.Data.HoaDon
-
 @{
     ViewData["Title"] = "Chi Tiết Hóa Đơn";
 }
@@ -13,9 +12,8 @@
 <br />
 <br />
 <br />
-<h1>Chi Tiết Hóa Đơn</h1>
-<br />
-<div>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+<div class="container">
     <h4>Thông tin hóa đơn:</h4>
     <hr />
     <dl class="row">
@@ -27,38 +25,50 @@
         </dd>
     </dl>
 </div>
-<br />
-<div>
-    <h4>Chi tiết sản phẩm:</h4>
-    <table class="table">
-        <thead>
-            <tr style="background-color: #A0522D; color:white">
-                <th>
-                    Tên Sản Phẩm
-                </th>
-                <th>
-                    Đơn Giá
-                </th>
-                <th>
-                    Số Lượng
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in Model.ChiTietHds)
-            {
-                <tr>
-                    <td>
-                        @item.MaHhNavigation.TenHh
-                    </td>
-                    <td>
-                        @item.DonGia
-                    </td>
-                    <td>
-                        @item.SoLuong
-                    </td>
-                </tr>
-            }
-        </tbody>
-    </table>
+<div class="container">
+    <div class="row">
+        <div class="col-12 mb-3 mb-lg-5">
+            <div class="position-relative card table-nowrap table-card">
+                <div class="card-header align-items-center">
+                    <h5 class="mb-0">Chi tiết sản phẩm</h5>
+                </div>
+                <div class="table-responsive">
+                    <table class="table mb-0">
+                        <thead class="small text-uppercase bg-body text-muted">
+                            <tr>
+                                <th>
+                                    Tên Sản Phẩm
+                                </th>
+                                <th>
+                                    Đơn Giá
+                                </th>
+                                <th>
+                                    Số Lượng
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.ChiTietHds)
+                            {
+                                <tr class="align-middle">
+                                    <td>
+                                        @item.MaHhNavigation.TenHh
+                                    </td>
+                                    <td>
+                                        @item.DonGia
+                                    </td>
+                                    <td>
+                                        @item.SoLuong
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-6 mb-3">
+            <a asp-action="DanhSachHoaDon" class="btn btn-primary">Xem Đơn Hàng</a>
+        </div>
+    </div>
 </div>
