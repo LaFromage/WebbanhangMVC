@@ -71,7 +71,6 @@ namespace WebBanHangMVC.Controllers
         }
 
         [Authorize]
-        [Authorize(Policy = "RequireCustomerRole")]
         [HttpGet]
         public IActionResult Checkout()
         {
@@ -84,11 +83,9 @@ namespace WebBanHangMVC.Controllers
         }
 
         [Authorize]
-        [Authorize(Policy = "RequireCustomerRole")]
         [HttpPost]
         public IActionResult Checkout(CheckOutVM model)
         {
-
             if (ModelState.IsValid)
             {
                 var customerID = HttpContext.User.Claims.SingleOrDefault
@@ -99,6 +96,9 @@ namespace WebBanHangMVC.Controllers
                 {
                     khachHang = db.KhachHangs.SingleOrDefault(kh => kh.MaKh == customerID);
                 }
+
+                var tongTien = Cart.Sum(item => item.ThanhTien);
+
                 var hoadon = new HoaDon
                 {
                     MaKh = customerID,
@@ -109,8 +109,10 @@ namespace WebBanHangMVC.Controllers
                     CachThanhToan = "COD",
                     CachVanChuyen = "GRAB",
                     MaTrangThai = 0,
-                    GhiChu = model.GhiChu
+                    GhiChu = model.GhiChu,
+                    TongTien = tongTien // Thêm tổng tiền
                 };
+
                 db.Database.BeginTransaction();
 
                 try
@@ -145,7 +147,6 @@ namespace WebBanHangMVC.Controllers
         }
 
         [Authorize]
-        [Authorize(Policy = "RequireCustomerRole")]
         [HttpPost("/Cart/create-paypal-order")]
         public async Task<IActionResult> CreatePaypalOrder(CancellationToken cancellationToken)
         {
@@ -180,7 +181,6 @@ namespace WebBanHangMVC.Controllers
                     var donViTienTe = hoaDonPaypal.purchase_units.FirstOrDefault()?.amount?.currency_code ?? "USD"; // Đơn vị tiền tệ
                     var maDonHangThamChieu = hoaDonPaypal.id; // Mã đơn hàng tham chiếu
 
-                    // Tạo đơn hàng mới trong database
                     var customerID = HttpContext.User.Claims.SingleOrDefault(p => p.Type == MyConstants.CLAM_CUSTOMER_ID)?.Value;
                     var khachHang = db.KhachHangs.SingleOrDefault(kh => kh.MaKh == customerID);
                     var hoadon = new HoaDon
@@ -193,8 +193,10 @@ namespace WebBanHangMVC.Controllers
                         CachThanhToan = "PayPal",
                         CachVanChuyen = "GRAB",
                         MaTrangThai = 0,
-                        GhiChu = ghiChu
+                        GhiChu = ghiChu,
+                        TongTien = Convert.ToDouble(tongTien) // Thêm tổng tiền
                     };
+
                     db.Database.BeginTransaction();
                     try
                     {

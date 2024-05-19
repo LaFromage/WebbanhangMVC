@@ -32,6 +32,7 @@
                                     <th>Cách Thanh Toán</th>
                                     <th>Ghi Chú</th>
                                     <th>Trạng Thái</th>
+                                    <th>Tổng Tiền</th>
                                     <th>Chi Tiết Hóa Đơn</th>
                                 </tr>
                             </thead>
@@ -54,6 +55,7 @@
                                                 <p>Trạng thái không xác định</p>
                                             }
                                         </td>
+                                        <td>@hoaDon.TongTien</td>
                                         <td>
                                             <a style="color: #A0522D" href="@Url.Action("ChiTietHoaDon", "KhachHang", new { maHd = hoaDon.MaHd })">Xem</a>
                                         </td>

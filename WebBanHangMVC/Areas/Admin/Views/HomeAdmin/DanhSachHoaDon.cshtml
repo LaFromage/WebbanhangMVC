@@ -47,6 +47,7 @@
                                 <th>Địa Chỉ</th>
                                 <th>Điện Thoại</th>
                                 <th>Payment</th>
+                                <th>Total</th>
                                 <th>State</th>
                                 <th>Ghi Chú</th>
                                 <th>Hành Động</th>
@@ -57,27 +58,14 @@
                             @foreach (var item in Model)
                             {
                                 <tr class="align-middle">
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.MaHd)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.MaKh)
-                                    </td>
-                                    <td style="width:220px">
-                                        @Html.DisplayFor(modelItem => item.NgayDat)
-                                    </td>
-                                    <td style="width:220px">
-                                        @Html.DisplayFor(modelItem => item.HoTen)
-                                    </td>
-                                    <td style="width:150px">
-                                        @Html.DisplayFor(modelItem => item.DiaChi)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.DienThoai)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.CachThanhToan)
-                                    </td>
+                                    <td>@Html.DisplayFor(modelItem => item.MaHd)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.MaKh)</td>
+                                    <td style="width:220px">@Html.DisplayFor(modelItem => item.NgayDat)</td>
+                                    <td style="width:220px">@Html.DisplayFor(modelItem => item.HoTen)</td>
+                                    <td style="width:150px">@Html.DisplayFor(modelItem => item.DiaChi)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.DienThoai)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.CachThanhToan)</td>
+                                    <td><a>$</a>@Html.DisplayFor(modelItem => item.TongTien)</td>
                                     <td class="@trangThaiClasses[item.MaTrangThai]" style="width:215px">
                                         @if (ViewBag.TrangThaiMapping.ContainsKey(item.MaTrangThai))
                                         {
@@ -88,12 +76,8 @@
                                             <p>Trạng thái không xác định</p>
                                         }
                                     </td>
-                                    <td style="width:180px">
-                                        @Html.DisplayFor(modelItem => item.GhiChu)
-                                    </td>
-                                    <td>
-                                        <a href="@Url.Action("ChonTrangThai", "HomeAdmin", new { maHd = item.MaHd })" class="btn btn-primary">Chuyển trạng thái</a>
-                                    </td>
+                                    <td style="width:180px">@Html.DisplayFor(modelItem => item.GhiChu)</td>
+                                    <td><a href="@Url.Action("ChonTrangThai", "HomeAdmin", new { maHd = item.MaHd })" class="btn btn-primary">Chuyển trạng thái</a></td>
                                     <td>
                                         <a href="@Url.Action("ChiTietHoaDon", "HomeAdmin", new { maHd = item.MaHd })" class="btn btn-primary">Xem</a>
                                     </td>

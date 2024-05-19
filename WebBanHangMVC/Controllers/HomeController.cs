@@ -23,6 +23,13 @@ namespace WebBanHangMVC.Controllers
         {
             return View();
         }
+
+        [Route("/AccessDenied")]
+        public IActionResult AccessDenied()
+        {
+            return View();
+        }
+
         public IActionResult Privacy()
         {
             return View();
