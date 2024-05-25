@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WebBanHangMVC")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e77fcf4837d53d567503e0e70f50d49795967d95")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c67aa886fe192bb69cbf2713cdb8647bb845e8c6")]
 [assembly: System.Reflection.AssemblyProductAttribute("WebBanHangMVC")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WebBanHangMVC")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

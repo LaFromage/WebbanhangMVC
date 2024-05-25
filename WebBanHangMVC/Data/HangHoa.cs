@@ -19,7 +19,7 @@ public partial class HangHoa
 
     public string? Hinh { get; set; }
 
-    public DateTime NgaySx { get; set; }
+    public DateTime? NgaySx { get; set; }
 
     public double GiamGia { get; set; }
 
