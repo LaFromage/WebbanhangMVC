@@ -21,9 +21,9 @@ public partial class HangHoa
 
     public DateTime? NgaySx { get; set; }
 
-    public double GiamGia { get; set; }
+    public double? GiamGia { get; set; }
 
-    public int SoLanXem { get; set; }
+    public int? SoLanXem { get; set; }
 
     public string? MoTa { get; set; }
 
@@ -33,9 +33,9 @@ public partial class HangHoa
 
     public virtual ICollection<ChiTietHd> ChiTietHds { get; set; } = new List<ChiTietHd>();
 
-    public virtual Loai MaLoaiNavigation { get; set; } = null!;
+    public virtual Loai? MaLoaiNavigation { get; set; } = null!;
 
-    public virtual NhaCungCap MaNccNavigation { get; set; } = null!;
+    public virtual NhaCungCap? MaNccNavigation { get; set; } = null!;
 
     public virtual ICollection<YeuThich> YeuThiches { get; set; } = new List<YeuThich>();
 }

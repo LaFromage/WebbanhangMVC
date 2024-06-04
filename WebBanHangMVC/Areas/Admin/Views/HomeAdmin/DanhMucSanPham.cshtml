@@ -32,7 +32,7 @@
                                 <th>Tên Hàng Hóa</th>
                                 <th>Đơn Vị</th>
                                 <th>Đơn Giá</th>
-                                <th>Hình</th>
+                                <th style="display: flex;justify-content: center;">Hình</th>
                                 <th>Mô Tả Hàng Hóa</th>
                                 <th>Hành động</th>
                             </tr>
@@ -44,13 +44,13 @@
                                     <td style="width:200px">
                                         @Html.DisplayFor(modelItem => item.TenHh)
                                     </td>
-                                    <td>
+                                    <td style="width:90px">
                                         @Html.DisplayFor(modelItem => item.MoTaDonVi)
                                     </td>
                                     <td>
                                         @Html.DisplayFor(modelItem => item.DonGia)<a>   VND</a>
                                     </td>
-                                    <td style="width:200px">
+                                    <td style="width:200px; display: flex;justify-content: center;">
                                         <img src="~/Hinh/HangHoa/@item.Hinh" style="width:100px; height:100px" />
                                     </td>
                                     <td style="width:500px">

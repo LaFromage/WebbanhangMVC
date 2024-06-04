@@ -55,7 +55,15 @@
                                                 <p>Trạng thái không xác định</p>
                                             }
                                         </td>
-                                        <td>@hoaDon.TongTien</td>
+                                        <td>
+                                            @if (hoaDon.TongTien > 0)
+                                            {
+                                                @hoaDon.TongTien <a>VND</a>
+                                            } else
+                                            {
+                                                <a>0 VND</a>
+                                            }
+                                        </td>
                                         <td>
                                             <a style="color: #A0522D" href="@Url.Action("ChiTietHoaDon", "KhachHang", new { maHd = hoaDon.MaHd })">Xem</a>
                                         </td>

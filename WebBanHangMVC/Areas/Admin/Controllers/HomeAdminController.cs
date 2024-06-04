@@ -89,7 +89,7 @@ namespace WebBanHangMVC.Areas.Admin.Controllers
                 }
                 catch (Exception ex)
                 {
-                    // Log or handle the error as needed
+                    // Xử lý Exception
                 }
             }
             return View(sanPham);

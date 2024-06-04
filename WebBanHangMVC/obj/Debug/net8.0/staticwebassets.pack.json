@@ -33,6 +33,10 @@
       "PackagePath": "staticwebassets\\Hinh\\HangHoa\\21meTyhQebL._SL500_AA300_.jpg"
     },
     {
+      "Id": "D:\\LapTrinhNam4\\KhoaLuan\\WebBanHangMVC\\WebBanHangMVC\\wwwroot\\Hinh\\HangHoa\\2be6a510-aa4c-4b2f-bcdd-7757f7631b7f_1.jpg",
+      "PackagePath": "staticwebassets\\Hinh\\HangHoa\\2be6a510-aa4c-4b2f-bcdd-7757f7631b7f_1.jpg"
+    },
+    {
       "Id": "D:\\LapTrinhNam4\\KhoaLuan\\WebBanHangMVC\\WebBanHangMVC\\wwwroot\\Hinh\\HangHoa\\31EPGSm2s1L._SL500_AA300_.jpg",
       "PackagePath": "staticwebassets\\Hinh\\HangHoa\\31EPGSm2s1L._SL500_AA300_.jpg"
     },
@@ -329,6 +333,10 @@
       "PackagePath": "staticwebassets\\Hinh\\HangHoa\\71cBwWAgvIL._SL1430_.jpg"
     },
     {
+      "Id": "D:\\LapTrinhNam4\\KhoaLuan\\WebBanHangMVC\\WebBanHangMVC\\wwwroot\\Hinh\\HangHoa\\780f8691-f55c-49ce-8430-a1616054847b_1.jpg",
+      "PackagePath": "staticwebassets\\Hinh\\HangHoa\\780f8691-f55c-49ce-8430-a1616054847b_1.jpg"
+    },
+    {
       "Id": "D:\\LapTrinhNam4\\KhoaLuan\\WebBanHangMVC\\WebBanHangMVC\\wwwroot\\Hinh\\HangHoa\\816zGZv1ORL._SL1500_.jpg",
       "PackagePath": "staticwebassets\\Hinh\\HangHoa\\816zGZv1ORL._SL1500_.jpg"
     },
@@ -339,6 +347,10 @@
     {
       "Id": "D:\\LapTrinhNam4\\KhoaLuan\\WebBanHangMVC\\WebBanHangMVC\\wwwroot\\Hinh\\HangHoa\\81k1XbQ6nQL._SL1500_.jpg",
       "PackagePath": "staticwebassets\\Hinh\\HangHoa\\81k1XbQ6nQL._SL1500_.jpg"
+    },
+    {
+      "Id": "D:\\LapTrinhNam4\\KhoaLuan\\WebBanHangMVC\\WebBanHangMVC\\wwwroot\\Hinh\\HangHoa\\85efbab7-8770-4a6d-8b25-24b4fcca8dd2_1.jpg",
+      "PackagePath": "staticwebassets\\Hinh\\HangHoa\\85efbab7-8770-4a6d-8b25-24b4fcca8dd2_1.jpg"
     },
     {
       "Id": "D:\\LapTrinhNam4\\KhoaLuan\\WebBanHangMVC\\WebBanHangMVC\\wwwroot\\Hinh\\HangHoa\\91FM0Hog9FL._SL1500_.jpg",
@@ -357,6 +369,10 @@
       "PackagePath": "staticwebassets\\Hinh\\HangHoa\\927cf731-1e97-4416-870c-cac294f7a76d_f1.jpg"
     },
     {
+      "Id": "D:\\LapTrinhNam4\\KhoaLuan\\WebBanHangMVC\\WebBanHangMVC\\wwwroot\\Hinh\\HangHoa\\98f2c7f7-8257-4d7e-9258-afbcf6828702_1.jpg",
+      "PackagePath": "staticwebassets\\Hinh\\HangHoa\\98f2c7f7-8257-4d7e-9258-afbcf6828702_1.jpg"
+    },
+    {
       "Id": "D:\\LapTrinhNam4\\KhoaLuan\\WebBanHangMVC\\WebBanHangMVC\\wwwroot\\Hinh\\HangHoa\\Camera1.jpg",
       "PackagePath": "staticwebassets\\Hinh\\HangHoa\\Camera1.jpg"
     },
@@ -365,8 +381,16 @@
       "PackagePath": "staticwebassets\\Hinh\\HangHoa\\To.gif"
     },
     {
+      "Id": "D:\\LapTrinhNam4\\KhoaLuan\\WebBanHangMVC\\WebBanHangMVC\\wwwroot\\Hinh\\HangHoa\\a7e35f07-2b37-4faf-8a0d-19ef9be9f8dc_1.jpg",
+      "PackagePath": "staticwebassets\\Hinh\\HangHoa\\a7e35f07-2b37-4faf-8a0d-19ef9be9f8dc_1.jpg"
+    },
+    {
       "Id": "D:\\LapTrinhNam4\\KhoaLuan\\WebBanHangMVC\\WebBanHangMVC\\wwwroot\\Hinh\\HangHoa\\b7b410bf-87d7-423e-99d5-bec7c935acb2_hoshino.jpg",
       "PackagePath": "staticwebassets\\Hinh\\HangHoa\\b7b410bf-87d7-423e-99d5-bec7c935acb2_hoshino.jpg"
+    },
+    {
+      "Id": "D:\\LapTrinhNam4\\KhoaLuan\\WebBanHangMVC\\WebBanHangMVC\\wwwroot\\Hinh\\HangHoa\\bc7adf1d-45e5-4563-987b-d0b76c49c2b5_1.jpg",
+      "PackagePath": "staticwebassets\\Hinh\\HangHoa\\bc7adf1d-45e5-4563-987b-d0b76c49c2b5_1.jpg"
     },
     {
       "Id": "D:\\LapTrinhNam4\\KhoaLuan\\WebBanHangMVC\\WebBanHangMVC\\wwwroot\\Hinh\\HangHoa\\c9e41c37-894c-4d38-b56d-d15d608c2150_41BiMx1FKyL._SL500_AA300_.jpg",
@@ -407,6 +431,10 @@
     {
       "Id": "D:\\LapTrinhNam4\\KhoaLuan\\WebBanHangMVC\\WebBanHangMVC\\wwwroot\\Hinh\\KhachHang\\chinese girl meme.jpg",
       "PackagePath": "staticwebassets\\Hinh\\KhachHang\\chinese girl meme.jpg"
+    },
+    {
+      "Id": "D:\\LapTrinhNam4\\KhoaLuan\\WebBanHangMVC\\WebBanHangMVC\\wwwroot\\Hinh\\KhachHang\\f41b21d2-bb31-4a60-87c8-c4072279163b_hoshino.jpg",
+      "PackagePath": "staticwebassets\\Hinh\\KhachHang\\f41b21d2-bb31-4a60-87c8-c4072279163b_hoshino.jpg"
     },
     {
       "Id": "D:\\LapTrinhNam4\\KhoaLuan\\WebBanHangMVC\\WebBanHangMVC\\wwwroot\\Hinh\\KhachHang\\f57c4f63-524a-4b0a-821f-fa62eabb5b15_hoshino.jpg",
