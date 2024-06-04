@@ -1,22 +1,32 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\LapTrinhNam4\\KhoaLuan\\WebBanHangMVC\\",
+  "WorkspaceRootPath": "C:\\Users\\sakam\\source\\repos\\WebbanhangMVC\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{49D077E4-74A5-486A-8420-40408C287012}|WebBanHangMVC\\WebBanHangMVC.csproj|d:\\laptrinhnam4\\khoaluan\\webbanhangmvc\\webbanhangmvc\\views\\khachhang\\danhsachhoadon.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{49D077E4-74A5-486A-8420-40408C287012}|WebBanHangMVC\\WebBanHangMVC.csproj|solutionrelative:webbanhangmvc\\views\\khachhang\\danhsachhoadon.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_LocalDB__MSSQLLocalDB/C__USERS_SAKAM_SOURCE_REPOS_WEBBANHANGMVC_WEBBANHANGMVC_DATABASE.MDF/True/SqlTable/dbo.HangHoa.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{49D077E4-74A5-486A-8420-40408C287012}|WebBanHangMVC\\WebBanHangMVC.csproj|d:\\laptrinhnam4\\khoaluan\\webbanhangmvc\\webbanhangmvc\\controllers\\khachhangcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{49D077E4-74A5-486A-8420-40408C287012}|WebBanHangMVC\\WebBanHangMVC.csproj|solutionrelative:webbanhangmvc\\controllers\\khachhangcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{49D077E4-74A5-486A-8420-40408C287012}|WebBanHangMVC\\WebBanHangMVC.csproj|c:\\users\\sakam\\source\\repos\\webbanhangmvc\\webbanhangmvc\\controllers\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{49D077E4-74A5-486A-8420-40408C287012}|WebBanHangMVC\\WebBanHangMVC.csproj|solutionrelative:webbanhangmvc\\controllers\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{49D077E4-74A5-486A-8420-40408C287012}|WebBanHangMVC\\WebBanHangMVC.csproj|d:\\laptrinhnam4\\khoaluan\\webbanhangmvc\\webbanhangmvc\\areas\\admin\\controllers\\homeadmincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{49D077E4-74A5-486A-8420-40408C287012}|WebBanHangMVC\\WebBanHangMVC.csproj|solutionrelative:webbanhangmvc\\areas\\admin\\controllers\\homeadmincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{49D077E4-74A5-486A-8420-40408C287012}|WebBanHangMVC\\WebBanHangMVC.csproj|c:\\users\\sakam\\source\\repos\\webbanhangmvc\\webbanhangmvc\\views\\cart\\checkout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{49D077E4-74A5-486A-8420-40408C287012}|WebBanHangMVC\\WebBanHangMVC.csproj|solutionrelative:webbanhangmvc\\views\\cart\\checkout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{49D077E4-74A5-486A-8420-40408C287012}|WebBanHangMVC\\WebBanHangMVC.csproj|d:\\laptrinhnam4\\khoaluan\\webbanhangmvc\\webbanhangmvc\\areas\\admin\\views\\homeadmin\\themsanpham.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{49D077E4-74A5-486A-8420-40408C287012}|WebBanHangMVC\\WebBanHangMVC.csproj|solutionrelative:webbanhangmvc\\areas\\admin\\views\\homeadmin\\themsanpham.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{49D077E4-74A5-486A-8420-40408C287012}|WebBanHangMVC\\WebBanHangMVC.csproj|c:\\users\\sakam\\source\\repos\\webbanhangmvc\\webbanhangmvc\\areas\\admin\\views\\homeadmin\\danhmucsanpham.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{49D077E4-74A5-486A-8420-40408C287012}|WebBanHangMVC\\WebBanHangMVC.csproj|solutionrelative:webbanhangmvc\\areas\\admin\\views\\homeadmin\\danhmucsanpham.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_LocalDB__MSSQLLocalDB/C__USERS_SAKAM_SOURCE_REPOS_WEBBANHANGMVC_WEBBANHANGMVC_DATABASE.MDF/True/SqlTable/dbo.HoaDon.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49D077E4-74A5-486A-8420-40408C287012}|WebBanHangMVC\\WebBanHangMVC.csproj|c:\\users\\sakam\\source\\repos\\webbanhangmvc\\webbanhangmvc\\views\\hanghoa\\productitem.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{49D077E4-74A5-486A-8420-40408C287012}|WebBanHangMVC\\WebBanHangMVC.csproj|solutionrelative:webbanhangmvc\\views\\hanghoa\\productitem.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49D077E4-74A5-486A-8420-40408C287012}|WebBanHangMVC\\WebBanHangMVC.csproj|c:\\users\\sakam\\source\\repos\\webbanhangmvc\\webbanhangmvc\\views\\hanghoa\\detail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{49D077E4-74A5-486A-8420-40408C287012}|WebBanHangMVC\\WebBanHangMVC.csproj|solutionrelative:webbanhangmvc\\views\\hanghoa\\detail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -31,53 +41,87 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "DanhSachHoaDon.cshtml",
-              "DocumentMoniker": "D:\\LapTrinhNam4\\KhoaLuan\\WebBanHangMVC\\WebBanHangMVC\\Views\\KhachHang\\DanhSachHoaDon.cshtml",
-              "RelativeDocumentMoniker": "WebBanHangMVC\\Views\\KhachHang\\DanhSachHoaDon.cshtml",
-              "ToolTip": "D:\\LapTrinhNam4\\KhoaLuan\\WebBanHangMVC\\WebBanHangMVC\\Views\\KhachHang\\DanhSachHoaDon.cshtml",
-              "RelativeToolTip": "WebBanHangMVC\\Views\\KhachHang\\DanhSachHoaDon.cshtml",
-              "ViewState": "AQIAACoAAAAAAAAAAAAAAD4AAAAtAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-03T09:25:07.907Z",
+              "Title": "dbo.HangHoa [Data]",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/_LocalDB__MSSQLLocalDB/C__USERS_SAKAM_SOURCE_REPOS_WEBBANHANGMVC_WEBBANHANGMVC_DATABASE.MDF/True/SqlTable/dbo.HangHoa.sql",
+              "ToolTip": "dbo.HangHoa [Data]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2024-06-04T15:21:49.323Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "KhachHangController.cs",
-              "DocumentMoniker": "D:\\LapTrinhNam4\\KhoaLuan\\WebBanHangMVC\\WebBanHangMVC\\Controllers\\KhachHangController.cs",
-              "RelativeDocumentMoniker": "WebBanHangMVC\\Controllers\\KhachHangController.cs",
-              "ToolTip": "D:\\LapTrinhNam4\\KhoaLuan\\WebBanHangMVC\\WebBanHangMVC\\Controllers\\KhachHangController.cs",
-              "RelativeToolTip": "WebBanHangMVC\\Controllers\\KhachHangController.cs",
-              "ViewState": "AQIAAGIAAAAAAAAAAAAYwG8AAAAcAAAA",
+              "Title": "CartController.cs",
+              "DocumentMoniker": "C:\\Users\\sakam\\source\\repos\\WebbanhangMVC\\WebBanHangMVC\\Controllers\\CartController.cs",
+              "RelativeDocumentMoniker": "WebBanHangMVC\\Controllers\\CartController.cs",
+              "ToolTip": "C:\\Users\\sakam\\source\\repos\\WebbanhangMVC\\WebBanHangMVC\\Controllers\\CartController.cs",
+              "RelativeToolTip": "WebBanHangMVC\\Controllers\\CartController.cs",
+              "ViewState": "AQIAAJ4AAAAAAAAAAAAAwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-03T09:11:11.856Z",
+              "WhenOpened": "2024-06-04T15:08:06.856Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "HomeAdminController.cs",
-              "DocumentMoniker": "D:\\LapTrinhNam4\\KhoaLuan\\WebBanHangMVC\\WebBanHangMVC\\Areas\\Admin\\Controllers\\HomeAdminController.cs",
-              "RelativeDocumentMoniker": "WebBanHangMVC\\Areas\\Admin\\Controllers\\HomeAdminController.cs",
-              "ToolTip": "D:\\LapTrinhNam4\\KhoaLuan\\WebBanHangMVC\\WebBanHangMVC\\Areas\\Admin\\Controllers\\HomeAdminController.cs",
-              "RelativeToolTip": "WebBanHangMVC\\Areas\\Admin\\Controllers\\HomeAdminController.cs",
-              "ViewState": "AQIAAGgAAAAAAAAAAAAAAFsAAAAmAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-01T05:06:07.147Z",
+              "DocumentIndex": 4,
+              "Title": "dbo.HoaDon [Data]",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/_LocalDB__MSSQLLocalDB/C__USERS_SAKAM_SOURCE_REPOS_WEBBANHANGMVC_WEBBANHANGMVC_DATABASE.MDF/True/SqlTable/dbo.HoaDon.sql",
+              "ToolTip": "dbo.HoaDon [Data]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2024-06-04T15:07:35.056Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "ThemSanPham.cshtml",
-              "DocumentMoniker": "D:\\LapTrinhNam4\\KhoaLuan\\WebBanHangMVC\\WebBanHangMVC\\Areas\\Admin\\Views\\HomeAdmin\\ThemSanPham.cshtml",
-              "RelativeDocumentMoniker": "WebBanHangMVC\\Areas\\Admin\\Views\\HomeAdmin\\ThemSanPham.cshtml",
-              "ToolTip": "D:\\LapTrinhNam4\\KhoaLuan\\WebBanHangMVC\\WebBanHangMVC\\Areas\\Admin\\Views\\HomeAdmin\\ThemSanPham.cshtml",
-              "RelativeToolTip": "WebBanHangMVC\\Areas\\Admin\\Views\\HomeAdmin\\ThemSanPham.cshtml",
-              "ViewState": "AQIAACQAAAAAAAAAAAAAAC8AAAASAAAA",
+              "Title": "DanhMucSanPham.cshtml",
+              "DocumentMoniker": "C:\\Users\\sakam\\source\\repos\\WebbanhangMVC\\WebBanHangMVC\\Areas\\Admin\\Views\\HomeAdmin\\DanhMucSanPham.cshtml",
+              "RelativeDocumentMoniker": "WebBanHangMVC\\Areas\\Admin\\Views\\HomeAdmin\\DanhMucSanPham.cshtml",
+              "ToolTip": "C:\\Users\\sakam\\source\\repos\\WebbanhangMVC\\WebBanHangMVC\\Areas\\Admin\\Views\\HomeAdmin\\DanhMucSanPham.cshtml",
+              "RelativeToolTip": "WebBanHangMVC\\Areas\\Admin\\Views\\HomeAdmin\\DanhMucSanPham.cshtml",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAAC8AAABVAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-01T05:04:05.24Z"
+              "WhenOpened": "2024-06-04T14:50:51.025Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Checkout.cshtml",
+              "DocumentMoniker": "C:\\Users\\sakam\\source\\repos\\WebbanhangMVC\\WebBanHangMVC\\Views\\Cart\\Checkout.cshtml",
+              "RelativeDocumentMoniker": "WebBanHangMVC\\Views\\Cart\\Checkout.cshtml",
+              "ToolTip": "C:\\Users\\sakam\\source\\repos\\WebbanhangMVC\\WebBanHangMVC\\Views\\Cart\\Checkout.cshtml",
+              "RelativeToolTip": "WebBanHangMVC\\Views\\Cart\\Checkout.cshtml",
+              "ViewState": "AQIAADAAAAAAAAAAAAAAAEsAAAApAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-04T14:49:49.354Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ProductItem.cshtml",
+              "DocumentMoniker": "C:\\Users\\sakam\\source\\repos\\WebbanhangMVC\\WebBanHangMVC\\Views\\HangHoa\\ProductItem.cshtml",
+              "RelativeDocumentMoniker": "WebBanHangMVC\\Views\\HangHoa\\ProductItem.cshtml",
+              "ToolTip": "C:\\Users\\sakam\\source\\repos\\WebbanhangMVC\\WebBanHangMVC\\Views\\HangHoa\\ProductItem.cshtml",
+              "RelativeToolTip": "WebBanHangMVC\\Views\\HangHoa\\ProductItem.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAABDAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-04T14:48:47.678Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Detail.cshtml",
+              "DocumentMoniker": "C:\\Users\\sakam\\source\\repos\\WebbanhangMVC\\WebBanHangMVC\\Views\\HangHoa\\Detail.cshtml",
+              "RelativeDocumentMoniker": "WebBanHangMVC\\Views\\HangHoa\\Detail.cshtml",
+              "ToolTip": "C:\\Users\\sakam\\source\\repos\\WebbanhangMVC\\WebBanHangMVC\\Views\\HangHoa\\Detail.cshtml",
+              "RelativeToolTip": "WebBanHangMVC\\Views\\HangHoa\\Detail.cshtml",
+              "ViewState": "AQIAABIAAAAAAAAAAAAAAB8AAAA5AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-04T14:47:21.318Z",
+              "EditorCaption": ""
             }
           ]
         }
