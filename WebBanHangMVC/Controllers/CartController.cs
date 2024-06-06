@@ -148,9 +148,8 @@ namespace WebBanHangMVC.Controllers
 
         [Authorize]
         [HttpPost("/Cart/create-paypal-order")]
-        public async Task<IActionResult> CreatePaypalOrder(CancellationToken cancellationToken)
+        public async Task<IActionResult> CreatePaypalOrder()
         {
-            // Thông tin đơn hàng ở Paypal
             var tongTien = Cart.Sum(p => p.ThanhTien).ToString();
             var donViTienTe = "USD";
             var maDonHangThamChieu = "DH" + DateTime.Now.Ticks.ToString();
@@ -167,9 +166,8 @@ namespace WebBanHangMVC.Controllers
         }
 
         [Authorize]
-        [Authorize(Policy = "RequireCustomerRole")]
         [HttpPost("/Cart/capture-paypal-order")]
-        public async Task<IActionResult> CapturePaypalOrder(string hoTen, string diaChi, string dienThoai, string ghiChu, string orderID, CancellationToken cancellationToken)
+        public async Task<IActionResult> CapturePaypalOrder(string hoTen, string diaChi, string dienThoai, string ghiChu, string orderID)
         {
             try
             {

@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\sakam\\Source\\Repos\\WebbanhangMVC\\WebBanHangMVC\\WebBanHangMVC.csproj": {}
+    "D:\\LapTrinhNam4\\KhoaLuan\\WebBanHangMVC\\WebBanHangMVC\\WebBanHangMVC.csproj": {}
   },
   "projects": {
-    "C:\\Users\\sakam\\Source\\Repos\\WebbanhangMVC\\WebBanHangMVC\\WebBanHangMVC.csproj": {
+    "D:\\LapTrinhNam4\\KhoaLuan\\WebBanHangMVC\\WebBanHangMVC\\WebBanHangMVC.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\sakam\\Source\\Repos\\WebbanhangMVC\\WebBanHangMVC\\WebBanHangMVC.csproj",
+        "projectUniqueName": "D:\\LapTrinhNam4\\KhoaLuan\\WebBanHangMVC\\WebBanHangMVC\\WebBanHangMVC.csproj",
         "projectName": "WebBanHangMVC",
-        "projectPath": "C:\\Users\\sakam\\Source\\Repos\\WebbanhangMVC\\WebBanHangMVC\\WebBanHangMVC.csproj",
-        "packagesPath": "C:\\Users\\sakam\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\sakam\\Source\\Repos\\WebbanhangMVC\\WebBanHangMVC\\obj\\",
+        "projectPath": "D:\\LapTrinhNam4\\KhoaLuan\\WebBanHangMVC\\WebBanHangMVC\\WebBanHangMVC.csproj",
+        "packagesPath": "C:\\Users\\Fromage-Laptop\\.nuget\\packages\\",
+        "outputPath": "D:\\LapTrinhNam4\\KhoaLuan\\WebBanHangMVC\\WebBanHangMVC\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\sakam\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Fromage-Laptop\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,7 +26,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -96,7 +95,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

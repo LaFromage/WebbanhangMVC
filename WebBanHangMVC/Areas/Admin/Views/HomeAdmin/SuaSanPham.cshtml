@@ -6,12 +6,12 @@
     Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h1>Sửa Hàng Hóa</h1>
+<h1>Sửa Sản Phẩm</h1>
 
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form method="post" asp-action="SuaSanPham">
+        <form method="post" asp-action="SuaSanPham" enctype="multipart/form-data">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="MaHh" />
             <div class="form-group">
@@ -40,19 +40,13 @@
                 <span asp-validation-for="DonGia" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Hinh" class="control-label">Hình</label>
+                <label class="form-label my-3" for="Hinh">Hình</label>
                 <input type="file" name="Hinh" class="form-control" />
-                <span asp-validation-for="Hinh" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="GiamGia" class="control-label">Giảm Giá (Nếu có)</label>
                 <input asp-for="GiamGia" class="form-control" />
                 <span asp-validation-for="GiamGia" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="SoLanXem" class="control-label">Số Lần Xem</label>
-                <input asp-for="SoLanXem" class="form-control" />
-                <span asp-validation-for="SoLanXem" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="MoTa" class="control-label">Mô Tả</label>

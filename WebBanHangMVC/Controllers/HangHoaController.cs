@@ -19,7 +19,7 @@ namespace WebBanHangMVC.Controllers
         {
             int pageSize = 6;
             int pageNumber = page ?? 1;
-
+            ViewBag.Loai = loai;
             var hangHoas = db.HangHoas.AsQueryable();
 
             if (loai.HasValue)
@@ -42,6 +42,7 @@ namespace WebBanHangMVC.Controllers
         {
             int pageSize = 6;
             int pageNumber = page ?? 1;
+            ViewBag.Query = query;
 
             var hangHoas = db.HangHoas.AsQueryable();
 

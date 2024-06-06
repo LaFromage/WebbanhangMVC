@@ -1,4 +1,7 @@
-﻿@model IEnumerable<WebBanHangMVC.ViewModels.HangHoaVM>
+﻿@using Microsoft.AspNetCore.Http
+@using X.PagedList
+@using X.PagedList.Mvc.Core
+@model IPagedList<WebBanHangMVC.ViewModels.HangHoaVM>
 @{
     ViewData["Title"] = "Search";
     Layout = "_DanhSachHangHoa";
@@ -6,3 +9,11 @@
 
 <h1>Search</h1>
 @await Html.PartialAsync("ProductItem", Model)
+<!-- Phan Trang -->
+<div class="col-12">
+    <div class="pagination d-flex justify-content-center mt-5">
+        @Html.PagedListPager(Model, page => Url.Action("Search", new { page, query = ViewBag.Query }))
+    </div>
+
+</div>
+<!-- Phan Trang -->

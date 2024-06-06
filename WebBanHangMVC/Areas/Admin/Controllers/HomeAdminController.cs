@@ -110,10 +110,20 @@ namespace WebBanHangMVC.Areas.Admin.Controllers
         [Route("SuaSanPham")]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult SuaSanPham(HangHoa sanPham)
+        public IActionResult SuaSanPham(HangHoa sanPham, IFormFile Hinh)
         {
             if (ModelState.IsValid)
             {
+                if (Hinh != null && Hinh.Length > 0)
+                {
+                    var uniqueFileName = Guid.NewGuid().ToString() + "_" + Path.GetFileName(Hinh.FileName);
+                    var imagePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "Hinh", "HangHoa", uniqueFileName);
+                    using (var stream = new FileStream(imagePath, FileMode.Create))
+                    {
+                        Hinh.CopyTo(stream);
+                    }
+                    sanPham.Hinh = uniqueFileName;
+                }
                 db.Entry(sanPham).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("DanhMucSanPham", "HomeAdmin");

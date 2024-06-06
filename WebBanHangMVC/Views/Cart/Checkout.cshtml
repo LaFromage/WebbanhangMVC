@@ -120,13 +120,15 @@
                 return fetch("/Cart/create-paypal-order", {
                     method: "post",
                 }).then((response) => {
-
                     if (!response.ok) {
                         return response.json().then(error => { throw error; });
                     }
                     return response.json();
                 }).then((order) => order.id)
-                    .catch(error => alert(error.message));
+                    .catch(error => {
+                        console.error('Create order failed:', error);
+                        alert('Failed to create order: ' + error.message);
+                    });
             },
 
             onApprove: (data, actions) => {
@@ -138,16 +140,18 @@
                 formData.append('ghiChu', $('textarea[name=GhiChu]').val());
                 formData.append('orderId', data.orderID);
 
-                return fetch(`/Cart/capture-paypal-order`, {
+                return fetch(`/Cart/capture-paypal-order?orderId=${data.orderID}`, {
                     method: "post",
                     body: formData
                 }).then((response) => {
                     if (!response.ok) {
                         return response.json().then(error => { throw error; });
                     }
-                    // Đổi địa chỉ tới action thông báo thành công
                     window.location.href = "/Cart/PaymentSuccess";
-                }).catch(error => alert(error.message));
+                }).catch(error => {
+                    console.error('Capture order failed:', error);
+                    alert('Failed to capture order: ' + error.message);
+                });
             }
         }).render('#paypal-button-container');
     </script>

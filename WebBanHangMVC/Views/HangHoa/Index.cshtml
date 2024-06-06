@@ -1,4 +1,5 @@
-﻿@using X.PagedList
+﻿@using Microsoft.AspNetCore.Http
+@using X.PagedList
 @using X.PagedList.Mvc.Core
 @model IPagedList<WebBanHangMVC.ViewModels.HangHoaVM>
 @{
@@ -20,7 +21,7 @@
 <!-- Phan Trang -->
 <div class="col-12">
     <div class="pagination d-flex justify-content-center mt-5">
-        @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+        @Html.PagedListPager(Model, page => Url.Action("Index", new { page, loai = ViewBag.Loai }))
     </div>
 </div>
 <!-- Phan Trang -->
