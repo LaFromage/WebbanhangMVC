@@ -5,7 +5,7 @@
 
 <!-- Single Page Header start -->
 <div class="container-fluid page-header py-5">
-    <h1 class="text-center text-white display-6">Shop Detail</h1>
+    <h1 class="text-center text-white display-6">Chi Tiết Hàng Hóa</h1>
     <ol class="breadcrumb justify-content-center mb-0">
         <li class="breadcrumb-item"><a href="/">Trang chủ</a></li>
         <li class="breadcrumb-item"><a href="/">Hàng hóa</a></li>
@@ -28,7 +28,7 @@
                     </div>
                     <div class="col-lg-6">
                         <h4 class="fw-bold mb-3">@Model.TenHh</h4>
-                        <p class="mb-3">Category: @Model.TenLoai</p>
+                        <p class="mb-3">Danh mục: @Model.TenLoai</p>
                         <h5 class="fw-bold mb-3"><a>$</a>@Model.DonGia</h5>
                         <p class="mb-4">@Model.MoTaNgan</p>
                         <form asp-action="AddToCart" asp-controller="Cart" asp-route-id="@Model.MaHh">
